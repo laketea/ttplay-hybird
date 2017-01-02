@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="gameHeader" style="background-image: url(http://www.letsv.com/Uploads/Game/2016-12-14/148170317438138409.png);">
+				<div class="gameHeaderBg"></div>
+				<div class="gameHeaderPhoto">
+					<img style="border-radius:15px;" class="photo" src="/Uploads/Game/2016-12-14/148170317438138409.png"></div>
+
+				<!--header start-->
+				<div class="header">
+					<div class="userPhoto"><img class="photo" src="http://wx.qlogo.cn/mmopen/uricszJ1CXoJCGv6v8BoEHuQ28eiaLjKnP2d1Ift6WCC0y9G7NibpyC35jdFf3Ga2SmS5ib79YmibGTdJvRGegUkPyPibTIwJicOMRR/0"></div>
+					<div class="userName">
+						<p class="vip-name">Z伟</p>
+					</div>
+					<a onclick="onCollectClick()" class="collectButton"><img src="/Public/Web/images/btnCollect.png"></a>
+				</div>
+				<!--header end-->
+			</div>
+			<div class="main">
+				<!--user-tab start-->
+				<div class="gameDetail">
+					<p class="tc f30">合体三国</p>
+					<p class="tc f22"><span></span><span></span></p>
+					<p class="tc">
+						<a class="game-enter-button" href="/Web/Game/login/gid/5.html" role="button" external="true">开 始</a>
+					</p>
+
+					<p class="section-title">内容介绍</p>
+					<p class="txt">全体系创新阵法，上千武将任你调遣，逼真的3D主城效果，群雄武将招至麾下，经典传承，逐鹿中原一统三国霸业！《合体三国》涵盖了角色扮演，挂机，对战等丰富玩法，游戏新增3D主城，让玩家初次体验游戏就有不一样的视觉冲击。并首次新增航海 、挖矿、城池、掠夺等特色对战玩法，更是创新性的提供“ 武将地牢任务”与“游历名将”等武将招募方式，丰富玩家收集武将的手段。画面精美Q萌，武将系统丰富，阵法相生相克...</p>
+					<!--<p class="tc txt"><a id="showTxtBtn" onClick="showTxt()">展开&or;</a></p>-->
+				</div>
+				<!--user-tab end-->
+				<!--gameListRegion start-->
+				<div id="gameListRegion">
+					<div id="gameListWrapper">
+						<div class="games-list mb20">
+							<!--游戏礼包列表内容开始-->
+							<p class="section-title">游戏礼包</p>
+							<div class="container games-list-content">
+								<div class="media game-list-item">
+									<div class="media-body" data-gameid="62">
+										<p class="game-title"></p>
+										<p class="game-load"><span>10万铜钱*2，
+10万声望*2，
+大金疮药*8，
+跳过令*10</span></p>
+										<div class="table-model-pro"><i style="width:3.5%"></i></div>
+										<p class="game-desc">此礼包还剩余193个</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" onclick="alertInfo(6)" role="button" external="true">领 号</a>
+									</div>
+								</div>
+								<!--<div class="more" onclick="onGamesMore()"><span>点击加载更多</span></div></div>-->
+							</div>
+							<!--游戏礼包列表内容开始-->
+						</div>
+						<div class="games-list">
+							<!--热门游戏内容开始-->
+							<p class="section-title">热门游戏</p>
+							<div class="container games-list-content">
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/23.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-28/1482894131990015779.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">部落大亨<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《部落大亨》是一款轻度的挂机放置类游戏，讲述了玩家作为主角建设自己的部落、搜集卡牌战斗、成为部落中最强大的人的故事。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/23.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/5.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-14/148170317438138409.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">合体三国<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">全体系创新阵法，上千武将任你调遣，逼真的3D主城效果，群雄武将招至麾下，经典传承，逐鹿中原一统三国霸业！《合体三国》涵盖了角色扮演，挂机，对战等丰富玩法，游戏新增3D主城，让玩家初次体验游戏就有不一样的视觉冲击。并首次新增航海 、挖矿、城池、掠夺等特色对战玩法，更是创新性的提供“ 武将地牢任务”与“游历名将”等武将招募方式，丰富玩家收集武将的手段。画面精美Q萌，武将系统丰富，阵法相生相克...</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/5.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/4.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-13/1481626804107360091.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">小小地下城<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">小小地下城</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/4.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/3.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-13/14815594461072345293.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">噩梦岛<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《噩梦岛》是一款黑暗风格的全新挂机类游戏，不仅可以招募传说中的英雄协同作战，收集散落的神器施展神威，雇佣神秘的佣兵完成突击，还有外表萌翻天，战斗力爆表的宠物，既能帮你打怪物，又能进行pvp，打赢还能吸收属性哦。这是一款创新有趣的休闲挂机游戏，也是一款需要毅力的游戏，谁能坚持到底，登上噩梦神殿顶部，谁又能称霸榜单，傲视群雄，噩梦岛第一勇士的荣耀就在这里等着你。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/3.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/1.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-09/1481217045889197177.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">英雄也疯狂<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《英雄也疯狂》是一款休闲的放置类游戏。上古之神克苏恩隐藏在安其拉神庙的深处，这个被称为千眼之魔的怪物像噩梦一样盘踞在那里，为了血肉诅咒，为了进食，疯狂的蛊惑其拉虫人入侵艾泽拉斯大陆。当艾泽拉斯大陆的生存受到了极大威胁的时候，八位勇士挺身而出，奋力抵抗，而玩家是身负强大神术的预言之子，带领勇士，打败入侵的敌人！守护艾泽拉斯大陆的安全！无需下载，即点即玩！</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/1.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<!--<div class="more" onclick="onGamesMore()"><span>点击加载更多</span></div></div>-->
+							</div>
+
+							<!--热门游戏内容结束-->
+						</div>
+					</div>
+				</div>
+				<!--gameListRegion end-->
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

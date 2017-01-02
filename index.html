@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="header base">
+				<div class="userPhoto"><img class="photo" src="http://wx.qlogo.cn/mmopen/uricszJ1CXoJCGv6v8BoEHuQ28eiaLjKnP2d1Ift6WCC0y9G7NibpyC35jdFf3Ga2SmS5ib79YmibGTdJvRGegUkPyPibTIwJicOMRR/0"></div>
+				<div class="userName">
+					<p class="vip-name">Z伟</p>
+				</div>
+				<a onclick="onCollectClick()" class="collectButton"><img src="/images/btnCollect.png"></a>
+			</div>
+			<div class="main">
+				<!--banner start-->
+				<div class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!--支持循环，需要重复图片节点-->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#"><img src="http://www.letsv.com/Uploads/Game/2016-12-15/14817952421525109067.jpg" /></a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#"><img src="http://www.letsv.com/Uploads/Game/2016-12-15/14817952421525109067.jpg" /></a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#"><img src="http://www.letsv.com/Uploads/Game/2016-12-15/14817952421525109067.jpg" /></a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#"><img src="http://www.letsv.com/Uploads/Game/2016-12-15/14817952421525109067.jpg" /></a>
+						</div>
+						<!--支持循环，需要重复图片节点-->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#"><img src="http://www.letsv.com/Uploads/Game/2016-12-15/14817952421525109067.jpg" /></a>
+						</div>
+					</div>
+				</div>
+				<!--banner end-->
+				<!--user-tab start-->
+				<ul class="nav user-tab-bar">
+					<li class="user-tab tab-last-hot active"><span class="clickTab"><i class="hot"></i><p>热门</p></span></li>
+					<li class="user-tab tab-last-new"><span class="clickTab"><i class="new"></i><p>新上架</p></span></li>
+					<li class="user-tab tab-last-infor"><span class="clickTab"><i class="infor"></i><p>资讯</p></span></li>
+					<li class="user-tab tab-last-cat"><span class="clickTab"><i class="cat"></i><p>新开服</p></span></li>
+				</ul>
+				<!--user-tab end-->
+				<!--lastPlay start-->
+				<div id="lastPlayedRegion">
+					<div id="lastPlayedWrapper">
+						<div class="recent">
+							<p class="section-title">最近在玩</p>
+							<div id="wrapper" class="recent-content">
+								<div id="scroller" style="width: 172px; transition: 0ms cubic-bezier(0.1, 0.57, 0.1, 1); -webkit-transition: 0ms cubic-bezier(0.1, 0.57, 0.1, 1); transform: translate(0px, 0px) translateZ(0px);">
+									<ul class="recent-games-list">
+										<li>
+											<a herf="/Web/Game/login/gid/1.html">
+												<img onclick="javascript:location.href='/Web/Game/login/gid/1.html';" style="border-radius:15px;" src="/Uploads/Game/2016-12-09/1481217045889197177.png">
+											</a>
+											<p>英雄也疯狂</p>
+										</li>
+										<li>
+											<a herf="/Web/Game/login/gid/5.html">
+												<img onclick="javascript:location.href='/Web/Game/login/gid/5.html';" style="border-radius:15px;" src="/Uploads/Game/2016-12-14/148170317438138409.png">
+											</a>
+											<p>合体三国</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--lastPlay end-->
+				<!--gameListRegion start-->
+				<div id="gameListRegion">
+					<div id="gameListWrapper">
+						<div class="games-list">
+							<p class="games-list-title">热门推荐</p>
+							<div class="container games-list-content">
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='game.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-28/1482894131990015779.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">部落大亨<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《部落大亨》是一款轻度的挂机放置类游戏，讲述了玩家作为主角建设自己的部落、搜集卡牌战斗、成为部落中最强大的人的故事。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='game.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-14/148170317438138409.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">合体三国<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">全体系创新阵法，上千武将任你调遣，逼真的3D主城效果，群雄武将招至麾下，经典传承，逐鹿中原一统三国霸业！《合体三国》涵盖了角色扮演，挂机，对战等丰富玩法，游戏新增3D主城，让玩家初次体验游戏就有不一样的视觉冲击。并首次新增航海 、挖矿、城池、掠夺等特色对战玩法，更是创新性的提供“ 武将地牢任务”与“游历名将”等武将招募方式，丰富玩家收集武将的手段。画面精美Q萌，武将系统丰富，阵法相生相克...</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/5.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/4.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-13/1481626804107360091.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">小小地下城<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">小小地下城</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/4.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/3.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-13/14815594461072345293.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">噩梦岛<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《噩梦岛》是一款黑暗风格的全新挂机类游戏，不仅可以招募传说中的英雄协同作战，收集散落的神器施展神威，雇佣神秘的佣兵完成突击，还有外表萌翻天，战斗力爆表的宠物，既能帮你打怪物，又能进行pvp，打赢还能吸收属性哦。这是一款创新有趣的休闲挂机游戏，也是一款需要毅力的游戏，谁能坚持到底，登上噩梦神殿顶部，谁又能称霸榜单，傲视群雄，噩梦岛第一勇士的荣耀就在这里等着你。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/3.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/1.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-09/1481217045889197177.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">英雄也疯狂<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《英雄也疯狂》是一款休闲的放置类游戏。上古之神克苏恩隐藏在安其拉神庙的深处，这个被称为千眼之魔的怪物像噩梦一样盘踞在那里，为了血肉诅咒，为了进食，疯狂的蛊惑其拉虫人入侵艾泽拉斯大陆。当艾泽拉斯大陆的生存受到了极大威胁的时候，八位勇士挺身而出，奋力抵抗，而玩家是身负强大神术的预言之子，带领勇士，打败入侵的敌人！守护艾泽拉斯大陆的安全！无需下载，即点即玩！</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/1.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/7.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821271231448865288.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">大圣西游<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《大圣西游》是一款回合制H5游戏巨作，自上线以来获得了众多玩家的热爱!Q版造型的可爱人物，浓 郁古典风的精美场景，原汁原味的经典玩法，丰富健全的游戏玩法和充满特色的养成系统，让《大圣 西游》H5游戏能够获得每一个玩家的热爱与青睐。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a class="game-enter-button" href="/Web/Game/login/gid/7.html" role="button" external="true">进 入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/22.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821382872065903513.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">乱弹三国<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《乱弹三国》是由梦启科技研发的首款H5三国题材弹射手游，游戏采用新颖的弹射式玩法，并将三国武将幻化为弹珠，融入弹珠反弹、贯穿等元素，真实体现物理碰撞，带给玩家独特的弹珠战斗体验，同时加入了寻访挂机机制，玩家离线也可以有丰富的收益。 游戏中每位英雄都会以弹珠弹射的方式对敌人展开攻击，释放各种华丽炫目的英雄技能。游戏以战队策略搭配&amp;amp;amp;卡牌养成为主，以独特方式诠释三国乱世纷争，塑造个性英雄</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/21.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482138233219855074.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">小小战争<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">游戏以中世纪欧洲为背景，精美的游戏画面，量身定制的背景音乐，富有策略性的玩法，简单的操作，让你能轻松运筹帷幄，身临其境。玩家化身为一方领主，招兵买龙，建造自己的军队，出城攻打掠夺，保卫自己的领土，建设一个强大的家园。玩家不仅可以发展自己的领地，还可以与其他玩家组建成联盟，享受联盟专有增益，共同发展壮大。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/20.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821381531018046417.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">乱戳三国<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《乱戳三国》一款由热游网络科技开发的热血三国题材手机网页游戏。群将约架，一统三国。 《乱戳三国》的战斗不同于其他的放置类的战斗，它的战斗方式更加的有趣，玩家可招募武将布阵、可使用计谋影响战局、可挑战魔王塔获得极品装备。正如《乱戳三国》这个名字，群将乱舞，热血群P，及华丽技能的特效。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/19.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821380841934668323.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">西游神传<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">三大种族、九大逆天技能、千种炫酷装备、告别文字战斗！激情PK、公会系统！百玩不厌、私服般的爽快感！ 你-----------准备好了么？！</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/18.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482137969559675744.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">愚公移山<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《愚公移山》这款游戏让你自虐到根本停不下来！让你丢节操到没朋友！和女神多多生子孙完成愚公移山的宏愿吧！</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/17.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482137804153569775.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">部落大亨<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《部落大亨》是一款轻度的挂机放置类游戏，讲述了玩家作为主角建设自己的部落、搜集卡牌战斗、成为部落中最强大的人的故事。 游戏的特点： 1.操作简单，点击屏幕就能完成所有的操作。 2.离线后游戏自动运行6小时，适合碎片化时间的玩法。 3.带有社交功能，游戏中可以和其他玩家互动、建立工会或互相抢夺金币资源 4.战斗简化，不烧脑 5.带有卡牌搜集与升级的玩法设计</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/16.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482137686933906185.gif" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">剑侠<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">一腔热血，看我剑气纵横！一把名剑，看我一统江湖！苍山颤颤，皆我剑锋所指！长河浩浩，皆我卫道除魔！新剑侠，新江湖。各种换装威风凛凛，十把名剑，看你是否风流？</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/15.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821376411106756939.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">大土豪<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">2016年最受欢迎的经营类游戏，在一座梦幻的城市里，开启你的商业生涯，成就你的土豪梦想吧！</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/14.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821373021551546335.jpg" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">美人心计<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《美人心计》是一款文字策略游戏，整个游戏以剧情贯穿，以选项对错的方式使玩家不断地向前探索。面对层出不穷的问题，玩家要不断的做出正确选择以确保剧情向正确的方向发展，错误的选择将使主角逆袭失败。玩家需要用智慧帮助屌丝主角们逆袭成功，走上人生巅峰</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/13.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/148213737415461170.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">全民宫斗<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">在《全民宫斗》中选择穿越成谁，聪明乖巧的宫女，老谋深算的皇后，或霸气四方的女帝，用你的智慧帮助她们在危机四伏的后宫中生存下来，面对层出不穷的问题，你需要不断的做出选择以确保剧情向正确的方向发展，错误的选择将使主角身陷绝境，用你的指尖开启一段段惊心动魄的后宫故事吧。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/10.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/14821374741833624112.jpg" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">盛世霸业<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">拥有手机页游第一超清画质，战法道热血传统。轻松离线挂机，装备、材料全爆落，真正享受游戏乐趣。首创真人互动抢夺Boss玩法，超多玩家和Boss陪您爽。快拿起手中的屠龙刀，开创自己的盛世霸业</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/9.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482137846373893201.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">天使童话<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">玩家作为天使，经营自己的教堂，每天帮助白雪公主、灰姑娘等著名童话人物实现愿望，并将圣女贞德、雅典娜、孙悟空等东西方知名神仙收为手下； ·卡牌收集：玩家可以再游戏中手机东西方神话中知名度极高的诸多神仙&amp;amp;天使； ·神殿经营：玩家作为天使，可以经营自己的神殿，帮助童话人物实现愿望，获得信徒；</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/8.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-19/1482137575281088792.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">决战沙城<span class="hot">热</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">《决战沙城》正版传奇世界授权，PK抢BOSS，传承了传奇世界核心玩法，再现战法道经典职业组合。自动打怪升级，带您重新回味经典，带给您不一样的极致享受。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/6.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-14/14817035931293168882.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">醉西游<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">醉西游</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+								<div class="media game-list-item">
+									<div class="media-left media-middle" data-gameid="62" style="position:relative;">
+										<img onclick="location.href='/Web/Game/game/gid/2.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-12/1481556762863036071.png" alt=""></div>
+									<div class="media-body" data-gameid="62">
+										<p class="game-title">联盟与部落<span class="hot">热</span><span class="recommend">荐</span></p>
+										<!--<p class="game-load"><span>角色</span><span>364.5MB</span><span>2.0万下载</span></p>-->
+										<p class="game-desc" id="texts" style="height:2.8em;">联盟与部落是一款魔兽题材的挂机横版闯关RPG游戏，9月8日上线以来一直人气高涨。游戏拥有顶级画质，华丽的技能特效和真实的打击感，让你欲罢不能。游戏由各传奇英雄，组成强大的联盟和部落两大阵营；每个英雄角色都有自己的特色，相互克制，考验玩家的策略布局能力；还有完美的坐骑系统、萌宠养成、跨服争霸、竞技PK、英雄试炼等丰富玩法；点击即玩，告别卡顿，可以轻松挂机升级，是休闲娱乐的首选游戏。</p>
+									</div>
+									<div class="media-right media-middle">
+										<a style="background-color: #ddd;" class="game-enter-button" href="javascript:void(0);" onclick="javascript:alert('努力接入中......');" role="button" external="true">正在接入</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--gameListRegion end-->
+			</div>
+		</div>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</body>
+
+</html>

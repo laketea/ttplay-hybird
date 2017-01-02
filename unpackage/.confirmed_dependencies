@@ -1,0 +1,70 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/index.css",
+      "css/base.css",
+      "/images/btnCollect.png",
+      "game.html"
+    ],
+    "refer": []
+  },
+  "login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/login.css",
+      "js/login.js",
+      "css/mui.min.css",
+      "js/app.js",
+      "js/api.js",
+      "fonts/mui.ttf",
+      "js/apis.js"
+    ],
+    "refer": [
+      "main.html",
+      "reg.html"
+    ]
+  },
+  "main.html": {
+    "resources": [
+      "js/main.js",
+      "index.html",
+      "css/base.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "index.html",
+      "gift.html",
+      "community.html",
+      "user.html"
+    ]
+  },
+  "gift.html": {
+    "resources": [
+      "/images/btnCollect.png",
+      "css/index.css",
+      "css/base.css",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "reg.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/app.js",
+      "js/apis.js",
+      "js/reg.js",
+      "css/login.css"
+    ],
+    "refer": [
+      "main.html",
+      "login.html"
+    ]
+  }
+}

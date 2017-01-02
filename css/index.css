@@ -1,0 +1,717 @@
+.header {
+	width: 100%;
+	background: #ffb814;
+	position: relative;
+	height: 1.06rem;
+}
+
+.userPhoto {
+	width: .8rem;
+	height: .8rem;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+	padding: .02rem;
+	position: absolute;
+	left: .4rem;
+	bottom: .187rem;
+	z-index: 5;
+}
+
+.userPhoto .photo {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.userName {}
+
+.userName p {
+	margin: 0;
+	font-size: .467rem;
+	position: absolute;
+	left: 1.467rem;
+	bottom: .25rem;
+	color: #fff;
+}
+
+.collectButton {
+	width: .64rem;
+	height: .64rem;
+	position: absolute;
+	right: .48rem;
+	bottom: .213rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.collectButton img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*banner切换开始*/
+
+#bannerRegion {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	display: block;
+	max-width: 100%;
+	max-height: 4.4rem;
+}
+
+.slidesjs-navigation {
+	display: none
+}
+
+.slidesjs-container {
+	z-index: 3
+}
+
+.slidesjs-container img {
+	width: 100%;
+	max-height: 4.4rem;
+}
+
+.slidesjs-pagination {
+	position: absolute;
+	right: .13rem;
+	bottom: .10rem;
+	z-index: 5
+}
+
+.slidesjs-pagination li {
+	float: left;
+	height: .13rem;
+	margin: 0 .05rem
+}
+
+.slidesjs-pagination a {
+	display: block;
+	width: .13rem;
+	height: .13rem;
+	overflow: hidden;
+	line-height: 1.32rem;
+	background: rgba(255, 255, 255, .5);
+	border-radius: .06rem;
+	-webkit-border-radius: .06rem;
+	background-clip: padding-box;
+}
+
+.slidesjs-pagination .active {
+	width: .13rem;
+	background: rgba(255, 255, 255, 1)
+}
+
+
+/*banner切换结束*/
+
+
+/*tab切换开始*/
+
+.user-tab-bar {
+	background-color: #fff;
+	margin-bottom: .26rem;
+	text-align: center
+}
+
+.user-tab {
+	display: inline-block;
+	width: 24%;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.user-tab span {
+	display: block;
+	font-size: .33rem;
+	color: #232323;
+	margin: 0 .1rem;
+	padding: .4rem 0 .26rem 0;
+	text-align: center;
+	position: relative;
+}
+
+.user-tab.active span {
+	border-bottom: .02rem solid #ffb814;
+	color: #ffb814
+}
+
+.user-tab span i {
+	display: inline-block;
+	width: .93rem;
+	height: .93rem;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.user-tab span i.hot {
+	background-image: url(./images/2.png)
+}
+
+.user-tab span i.new {
+	background-image: url(./images/3.png)
+}
+
+.user-tab span i.infor {
+	background-image: url(./images/4.png)
+}
+
+.user-tab span i.cat {
+	background-image: url(./images/5.png)
+}
+
+.user-tab span i.gift {
+	background-image: url(./images/g1.png)
+}
+
+.user-tab span i.today {
+	background-image: url(./images/g2.png)
+}
+
+.user-tab span i.week {
+	background-image: url(./images/g3.png)
+}
+
+.user-tab span p {}
+
+.gift-tab {
+	width: 32%;
+}
+
+
+/*TAB切换结束*/
+
+
+/*最近在玩开始*/
+
+.recent {
+	background: #fff;
+	margin-bottom: .26rem;
+}
+
+.section-title {
+	font-size: .37rem;
+	padding-top: .26rem;
+	padding-bottom: .05rem;
+	margin: 0 0 0 .4rem
+}
+
+#wrapper {
+	position: relative;
+	z-index: 1;
+	height: 2.6rem;
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+	-ms-touch-action: none
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: transparent;
+	height: 2.6rem;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none
+}
+
+#scroller ul {
+	list-style-type: none;
+	width: 100%;
+	padding: 0;
+	margin: 0
+}
+
+#scroller li {
+	width: 2.4rem;
+	height: 2.6rem;
+	float: left;
+	background-color: #fff;
+	overflow: hidden;
+	text-align: center
+}
+
+#scroller li>a>img {
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-top: .13rem
+}
+
+#scroller li>p {
+	font-size: .33rem;
+	margin-top: .06rem;
+	margin-bottom: 0;
+	color: #1f1f1f
+}
+
+
+/*最近在玩结束*/
+
+
+/*推荐游戏开始*/
+
+.games-list {
+	margin-bottom: 1.5rem;
+	background-color: #fff;
+}
+
+.games-list.mb20 {
+	margin-bottom: .267rem;
+}
+
+.games-list-title {
+	font-size: .37rem;
+	padding-top: .26rem;
+	padding-bottom: .05rem;
+	margin: 0 0 0 .4rem;
+}
+
+.games-list-content {
+	/*border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;*/
+	background-color: #fff;
+	/*padding:0 .4rem*/
+}
+
+.games-list-content.new {
+	padding: 0
+}
+
+.games-list-content>div {
+	/*border-bottom:1px solid #ddd*/
+}
+
+.game-list-item {
+	padding: .2rem .4rem;
+}
+
+.games-list-content.new .game-list-item {
+	border-bottom: 1px solid #ddd
+}
+
+.game-icon {
+	width: 1.76rem;
+	height: 1.76rem;
+	margin-right: .02rem
+}
+
+.game-title {
+	font-size: .37rem;
+	color: #232323;
+	margin-top: 0;
+	margin-bottom: .1rem;
+	position: relative;
+}
+
+.game-title span {
+	margin-left: .13rem;
+	padding: .06rem .1rem;
+	font-size: .24rem;
+	position: relative;
+	top: -2px;
+	color: #fff;
+	border-radius: .06rem;
+}
+
+.game-title span.new {
+	color: #fd1301;
+	border: .013rem solid #fd1301;
+}
+
+.game-title span.coupon {
+	background-color: #49baff;
+}
+
+.game-title span.hot {
+	background-color: #ffb814
+}
+
+.game-title span.elite {
+	background-color: #8041df
+}
+
+.game-title span.recommend {
+	background-color: #41df71
+}
+
+.game-title span.first {
+	background-color: #ff6666
+}
+
+.game-load {
+	font-size: .3rem;
+	color: #a1a1a1;
+	margin-top: 0;
+	margin-bottom: .1rem
+}
+
+.game-load span {
+	margin-right: .26rem;
+}
+
+.game-desc {
+	font-size: .32rem;
+	color: #5b5b5b;
+	margin-top: 0;
+	margin-bottom: .1rem
+}
+
+.media {
+	margin-top: .2rem
+}
+
+.media:first-child {
+	margin-top: 0
+}
+
+.media,
+.media-body {
+	zoom: 1;
+	overflow: hidden
+}
+
+.media-body {
+	width: 10000px
+}
+
+.media-object {
+	display: block
+}
+
+.media-object.img-thumbnail {
+	max-width: none
+}
+
+.media-right,
+.media>.pull-right {
+	padding-left: .13rem
+}
+
+.media-left,
+.media>.pull-left {
+	padding-right: .13rem
+}
+
+.media-left {
+	padding-right: .2rem
+}
+
+.media-body,
+.media-left,
+.media-right {
+	display: table-cell;
+	vertical-align: top
+}
+
+.media-middle {
+	vertical-align: middle
+}
+
+.media-bottom {
+	vertical-align: bottom
+}
+
+.media-heading {
+	margin-top: 0;
+	margin-bottom: .06rem
+}
+
+.media-list {
+	padding-left: 0;
+	list-style: none
+}
+
+.game-enter-button {
+	float: right;
+	font-size: .3rem;
+	background-color: #ffb814;
+	color: #fff;
+	padding: .24rem .46rem;
+	border-radius: .13rem;
+	white-space: nowrap;
+}
+
+
+/*推荐游戏结束*/
+
+.more span {
+	display: block;
+	padding: .2rem;
+	text-align: center
+}
+
+
+/*gift进度条开始*/
+
+.table-model-pro {
+	height: .267rem;
+	width: 100%;
+	overflow: hidden;
+	background: #f5f5f5;
+	border-radius: .13rem;
+}
+
+.table-model-pro i {
+	display: block;
+	height: .267rem;
+	border-radius: .13rem;
+	background: #fd5938;
+}
+
+
+/*gift进度条结束*/
+
+
+/*个人中心头像部分开始*/
+
+#profileWrapper .user-detail {
+	/*background:linear-gradient(to bottom,#1273d8,#89dfef) 0 0/100% 100% no-repeat;*/
+	background: url(../images/photoBg.jpg) no-repeat;
+	display: block;
+	height: 4.4rem;
+	text-align: center;
+	background-size: cover;
+	margin-bottom: .267rem;
+}
+
+#profileWrapper .user-id {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	font-size: .267rem;
+}
+
+#profileWrapper .fun-btn {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	color: #ddd;
+	border-radius: 5px;
+}
+
+#profileWrapper .user-photo {
+	position: relative;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+	padding: .026rem;
+	margin: 0 auto;
+	top: .53rem
+}
+
+#profileWrapper .user-photo .photo {
+	display: inline-block;
+	width: 1.946rem;
+	height: 1.946rem;
+	border-radius: 50%
+}
+
+#profileWrapper .user-name {
+	text-align: center;
+	margin-top: .5rem
+}
+
+#profileWrapper .user-name p {
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	font-size: .32rem;
+	color: #fff;
+}
+
+#profileWrapper .user-name p span {
+	font-size: .7em;
+	font-family: "Times New Roman", Times, serif;
+	color: #88d3fe;
+	border: 1px solid #88d3fe;
+	vertical-align: 15%
+}
+
+.btnLogout {
+	display: inline-block;
+	font-size: .48rem;
+	color: #fff;
+	text-align: center;
+	width: 3.6rem;
+	height: 1.28rem;
+	line-height: 1.28rem;
+	border: .0267rem solid #555;
+	background: #e46457;
+	border-radius: .2rem;
+}
+
+
+/*个人中心头像部分结束*/
+
+
+/*单游戏页面开始*/
+
+.gameHeader {
+	position: relative;
+	height: 2.667rem;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: left;
+}
+
+.gameHeader .header {
+	background: none;
+}
+
+.gameHeaderBg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2.667rem;
+	background: rgba(255, 255, 255, .5);
+	z-index: 1;
+}
+
+.gameHeaderPhoto {
+	position: absolute;
+	left: 50%;
+	margin-left: -0.88rem;
+	bottom: -0.667rem;
+	z-index: 2
+}
+
+.gameHeaderPhoto img {
+	width: 1.76rem;
+	height: 1.76rem;
+	border-radius: .267rem;
+}
+
+.gameDetail {
+	background: #fff;
+	padding-bottom: .2667rem;
+	margin-bottom: .267rem;
+}
+
+.gameDetail p.f30 {
+	font-size: .4rem;
+	color: #000;
+	padding-top: 1.0667rem;
+}
+
+.gameDetail p.f22 {
+	font-size: .293rem;
+	color: #5b5b5b;
+	margin-bottom: .4rem
+}
+
+.gameDetail p.f22 span {
+	padding: .133rem;
+}
+
+.gameDetail p.txt {
+	font-size: .32rem;
+	color: #5b5b5b;
+	padding: 0 .4rem;
+	text-indent: .667rem
+}
+
+.gameDetail p.txt a {
+	color: #5b5b5b;
+}
+
+.gameDetail .game-enter-button {
+	float: none;
+}
+
+.alert-mask {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 9999;
+}
+
+.alert-con {
+	position: fixed;
+	top: 4.067rem;
+	left: 60%;
+	margin-left: -3.6rem;
+	height: auto;
+	border: .0267rem solid #ffb814;
+	border-radius: .267rem;
+	background: rgba(255, 255, 255, .9);
+	z-index: 10000
+}
+
+.alert-con div {
+	width: 100%;
+	height: auto;
+	max-height: 5.333rem;
+	padding: .133rem;
+	overflow-y: auto;
+}
+
+.alert-close {
+	cursor: pointer;
+}
+
+.alert-con a.btn {
+	display: inline-block;
+	border-top: 0.0267rem solid #ffb814;
+	padding: .267rem 1.333rem;
+	color: #ec7357;
+	font-size: .453rem;
+}
+
+.alert-con a.btn:last-child {
+	border-left: 0.0267rem solid #ffb814;
+}
+
+.alert-con p.f30 {
+	font-size: .4rem;
+	padding-top: .533rem;
+	padding-bottom: .267rem;
+}
+
+.alert-con p.f26 {
+	font-size: .34677rem;
+}
+
+.alert-con p {
+	color: #000;
+	text-align: center;
+}
+
+.alert-con .inputP {
+	padding: .533rem .4rem;
+}
+
+.alert-con input {
+	font-size: .34677rem;
+	color: #000;
+	width: 100%;
+	border: .0267rem solid #ffb814;
+	padding: .133rem;
+}
+
+
+/*单游戏页面结束*/
