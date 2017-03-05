@@ -6,67 +6,24 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link href="css/base.css" rel="stylesheet" />
-		<link href="css/index.css" rel="stylesheet" />
 	</head>
 
 	<body>
-		<div class="mui-content">
-			<div id="profileWrapper">
-				<div class="user-detail">
-					<div class="user-photo"><img class="photo" src="http://wx.qlogo.cn/mmopen/uricszJ1CXoJCGv6v8BoEHuQ28eiaLjKnP2d1Ift6WCC0y9G7NibpyC35jdFf3Ga2SmS5ib79YmibGTdJvRGegUkPyPibTIwJicOMRR/0"></div>
-					<!--<div><img id="vip" src="http://cdn.11h5.com/static/image/vip/v0.png"></div>-->
-					<div class="user-name">
-						<p class="vip-name">昵称:Z伟</p>
-					</div>
-					<p class="user-id">ID:0000098</p>
-					<!--<div class="user-level"><p>积分：0</p></div>
-        <div class="user-level-detail"></div>-->
-				</div>
-			</div>
-			<div id="gameListRegion">
-				<div id="gameListWrapper">
-					<div class="games-list">
-						<p class="games-list-title">我的游戏</p>
-						<!--我的游戏内容开始-->
-						<div class="container games-list-content">
-							<div class="media game-list-item">
-								<div class="media-left media-middle" data-gameid="62" style="position:relative;">
-									<img onclick="location.href='/Web/Game/game/gid/1.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-09/1481217045889197177.png" alt="英雄也疯狂">
-								</div>
-								<div class="media-body">
-									<p class="game-title">英雄也疯狂</p>
-									<p class="game-load"><span>上次登陆：2016.12.27</span></p>
-								</div>
-								<div class="media-right media-middle">
-									<a class="game-enter-button" href="/Web/Game/login/gid/1.html" role="button" external="true">进 入</a>
-								</div>
-							</div>
-							<div class="media game-list-item">
-								<div class="media-left media-middle" data-gameid="62" style="position:relative;">
-									<img onclick="location.href='/Web/Game/game/gid/5.html'" style="border-radius:15px;" class="media-object game-icon" src="/Uploads/Game/2016-12-14/148170317438138409.png" alt="合体三国">
-								</div>
-								<div class="media-body">
-									<p class="game-title">合体三国</p>
-									<p class="game-load"><span>上次登陆：2016.12.27</span></p>
-								</div>
-								<div class="media-right media-middle">
-									<a class="game-enter-button" href="/Web/Game/login/gid/5.html" role="button" external="true">进 入</a>
-								</div>
-							</div>
-							<!--<div class="more" onclick="onGamesMore()"><span>点击加载更多</span></div></div>-->
-						</div>
-						<!--我的游戏内容结束-->
-					</div>
-				</div>
-				<!--gameListRegion end-->
-				
-				<p class="tc"><a class="btnLogout" onclick="onLogout()" role="button" external="true">退出登录</a><p>
-			</div>
-		</div>
+		<!--<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">天天玩</h1>
+		</header>-->
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init({
+				subpages: [{
+					url: 'user_sub.html',
+					id: 'user_sub.html',
+					styles: {
+						top: '0px',
+						bottom: '0px',
+					}
+				}]
+			});
 		</script>
 	</body>
 

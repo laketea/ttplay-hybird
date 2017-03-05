@@ -9,10 +9,12 @@
 			"url": 'main.html'
 		});
 		var main_loaded_flag = false;
-		mainPage.addEventListener("loaded", function() {
+		window.addEventListener("ajaxLoaded", function() {
 			main_loaded_flag = true;
 		});
-		var toMain = function() {
+		
+
+		var toMain = function(callback) {
 			//使用定时器的原因：
 			//可能执行太快，main页面loaded事件尚未触发就执行自定义事件，此时必然会失败
 			var id = setInterval(function() {
@@ -20,20 +22,25 @@
 					clearInterval(id);
 					$.fire(mainPage, 'show', null);
 					mainPage.show("pop-in");
+					callback && callback();
 				}
 			}, 20);
 		};
 
-		//		toMain();
+		var cacheState = app.getState();
 		//检查 "登录状态/锁屏状态" 开始
-		if(settings.autoLogin && state.token) {
-			toMain();
-		} else {}
-		// close splash
-		setTimeout(function() {
-			//关闭 splash
-			plus.navigator.closeSplashscreen();
-		}, 600);
+//		if(cacheState && cacheState.hasOwnProperty('id')) {
+			toMain(closeSplash);
+//		} else {
+//			closeSplash();
+//		}
+
+		function closeSplash() {
+			setTimeout(function() {
+				plus.navigator.closeSplashscreen();
+			}, 600);
+		}
+
 		//检查 "登录状态/锁屏状态" 结束
 		var loginButton = doc.getElementById('login');
 		var accountBox = doc.getElementById('account');
@@ -41,7 +48,7 @@
 		var autoLoginButton = doc.getElementById("autoLogin");
 		var regButton = doc.getElementById('reg');
 		var forgetButton = doc.getElementById('forgetPassword');
-		loginButton.addEventListener('click', function(event) {
+		loginButton.addEventListener('tap', function(event) {
 			var loginInfo = {
 				username: accountBox.value,
 				password: passwordBox.value,
@@ -54,27 +61,21 @@
 			if(loginInfo.password.length < 6) {
 				return plus.nativeUI.toast('密码最短为 6 个字符');
 			}
+			plus.nativeUI.showWaiting();
 			apis.login(loginInfo, function(res) {
+				res.nickname = res.username;
 				app.createState(res.data);
+				plus.nativeUI.closeWaiting();
 				toMain();
 			}, function(error) {
+				plus.nativeUI.closeWaiting();
 				if(error) {
 					plus.nativeUI.toast(error.msg);
 					return;
 				}
 			});
 		});
-		//		$.enterfocus('#login-form input', function() {
-		//			$.trigger(loginButton, 'tap');
-		//		});
-		autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
-		autoLoginButton.addEventListener('toggle', function(event) {
-			setTimeout(function() {
-				var isActive = event.detail.isActive;
-				settings.autoLogin = isActive;
-				app.setSettings(settings);
-			}, 50);
-		}, false);
+
 		regButton.addEventListener('tap', function(event) {
 			$.openWindow({
 				url: 'reg.html',
@@ -91,7 +92,7 @@
 				}
 			});
 		}, false);
-		
+
 		var backButtonPress = 0;
 		$.back = function(event) {
 			backButtonPress++;
@@ -105,8 +106,7 @@
 			}, 1000);
 			return false;
 		};
-		
-	
+
 	});
 
 }(mui, document));

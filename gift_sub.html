@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<style>
+			.mui-popup-button:first-child {
+				display: none;
+			}
+			.mui-popup-button:last-child {
+				border-radius: 0 0 13px 13px;
+			}
+			.mui-popup-input input{
+				-webkit-appearance: none;
+			    -moz-appearance: none;
+			    appearance: none;
+				background: transparent;
+			    outline: none;    
+			    border: none;
+			    box-shadow: none !important;
+			    padding: 0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">天天玩</h1>
+		</header>-->
+		<div id="refreshContainer" class="mui-content">
+			<div class="inner-content">
+				<div class="header base">
+					<div class="userPhoto"><img class="photo avatar" src=""></div>
+					<div class="userName">
+						<p class="vip-name"></p>
+					</div>
+					<a onclick="onCollectClick()" class="collectButton"><img src="./images/btnCollect.png"></a>
+				</div>
+				<ul class="nav user-tab-bar">
+					<li class="user-tab gift-tab tab-last-gift active" data-type="GIFT"><span class="clickTab"><i class="gift"></i><p>礼包列表</p></span></li>
+					<li class="user-tab tb-last-game gift-tab tab-last-today" data-type="TODAY"><span class="clickTab"><i class="today"></i><p>今日开服</p></span></li>
+					<li class="user-tab tb-last-game gift-tab tab-last-week" data-type="LASTWEEK"><span class="clickTab"><i class="week"></i><p>未来一周</p></span></li>
+				</ul>
+				<div id="gameListRegion">
+					<div id="gameListWrapper">
+						<div class="games-list">
+							<!--礼包列表内容开始-->
+							<div class="container games-list-content">
+							</div>
+						</div>
+					</div>
+					<!--gameListRegion end-->
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/apis.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/gift.js"></script>
+	</body>
+
+</html>

@@ -1,11 +1,18 @@
 (function($, window) {
 	var owner = window.app = window.app || {};
 
-	owner.createState = function(name, callback) {
+	owner.createState = function(data, callback) {
 		var state = owner.getState();
-		state.username = name;
-		state.token = "token123456789";
+		$.extend(state,data);
 		owner.setState(state);
+	};
+	
+	owner.isLogged = function() {
+		return owner.getState().id !== undefined;
+	};
+	
+	owner.clearState = function(){
+		owner.setState({nickname: '游客'});
 	};
 
 	/**
@@ -35,8 +42,9 @@
 	 * 获取当前状态
 	 **/
 	owner.getState = function() {
-		var stateText = localStorage.getItem('$state') || "{}";
-		return JSON.parse(stateText);
+		var stateText = JSON.parse(localStorage.getItem('$state') || "{nickname: '游客'}");
+		stateText.nickname = stateText.nickname || stateText.account;
+		return stateText;
 	};
 
 	/**
@@ -45,9 +53,6 @@
 	owner.setState = function(state) {
 		state = state || {};
 		localStorage.setItem('$state', JSON.stringify(state));
-		//var settings = owner.getSettings();
-		//settings.gestures = '';
-		//owner.setSettings(settings);
 	};
 
 	var checkEmail = function(email) {
@@ -117,3 +122,18 @@
 		}
 	}
 }(mui, window));
+
+function hasClass(ele,cls) {
+  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}

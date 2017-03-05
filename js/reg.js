@@ -20,18 +20,30 @@
 		var usernameBox = doc.getElementById('username');
 		var passwordBox = doc.getElementById('password');
 		var repeatPasswordBox = doc.getElementById('repeatpassword');
-		var mobileBox = doc.getElementById("mobile");
-		var authCodeBox = doc.getElementById("authCode");
+		var authCodeBox = doc.getElementById("authcode");
+		var repeatPasswordRowBox = doc.getElementById("repeat-password-row");
+		var authCodeRowBox = doc.getElementById("auth-code-row");
 		var mobileReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+		
+		usernameBox.addEventListener("blur", function(){
+			var userName = usernameBox.value;
+			if(userName && mobileReg.test(userName)){
+				authCodeRowBox.style.display = 'block';
+				repeatPasswordRowBox.style.display = 'none';
+			}else{
+				authCodeRowBox.style.display = 'none';
+				repeatPasswordRowBox.style.display = 'block';
+			}
+		})
 
 		regButton.addEventListener("tap", function() {
 			var regInfo = {
 				username: usernameBox.value,
 				password: passwordBox.value,
-				mobile: mobileBox.value,
-				authCode: authCodeBox.value,
 				cid: 1,
-				ccid: 2
+				ccid: 2,
+				mobile: 0,
+				authCode: authCodeBox.value
 			};
 
 			if(regInfo.username.length < 6 || regInfo.username.length > 20) {
@@ -39,9 +51,10 @@
 				return;
 			}
 
-			if(!regInfo.mobile || !mobileReg.test(regInfo.mobile)) {
-				plus.nativeUI.toast("手机号格式错误");
-				return;
+			if(mobileReg.test(regInfo.username)) {
+				regInfo.mobile = regInfo.username
+			}else{
+				regInfo.mobile = 0;
 			}
 
 			if(regInfo.password.length < 6) {
@@ -49,7 +62,7 @@
 				return;
 			}
 
-			if(regInfo.password !== repeatPasswordBox.value) {
+			if(!mobileReg.test(regInfo.username) && regInfo.password !== repeatPasswordBox.value) {
 				plus.nativeUI.toast("两次输入密码不一致");
 				return;
 			}
@@ -71,7 +84,7 @@
 			timeId = null;
 
 		captchBtn.addEventListener('tap', function() {
-			var mobile = mobileBox.value;
+			var mobile = usernameBox.value;
 			if(!mobile || !mobileReg.test(mobile)){
 				plus.nativeUI.toast("手机号格式错误");
 				return;

@@ -7,31 +7,73 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/base.css" rel="stylesheet" />
+		<style>
+			.mui-bar-tab .mui-tab-item .mui-icon{
+				width: 23px;
+				height: 23px;
+			}
+			.mui-active .mui-image-user{
+				background: url('./images/user-active.png');
+			}
+			.mui-active .mui-image-home{
+				background: url('./images/home-active.png');
+			}
+			.mui-active .mui-image-gift{
+				background: url('./images/gift-active.png');
+			}
+			.mui-active .mui-image-contact{
+				background: url('./images/contact-active.png');
+			}
+			.mui-image-user{
+				width: 23px;
+				height: 23px;
+				background: url('./images/user.png');
+				background-size: 23px 23px ;
+			}
+			.mui-image-home{
+				width: 23px;
+				height: 23px;
+				background: url('./images/home.png');
+				background-size: 23px 23px ;
+			}
+			.mui-image-gift{
+				width: 23px;
+				height: 23px;
+				background: url('./images/gift.png');
+				background-size: 23px 23px ;
+			}
+			.mui-image-contact{
+				width: 23px;
+				height: 23px;
+				background: url('./images/contact.png');
+				background-size: 23px 23px ;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active{
+				color: #929292;
+			}
+		</style>
 	</head>
 	<body>
-		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">天天玩</h1>
-		</header>
 		<nav class="mui-bar mui-bar-tab">
 			<a id="defaultTab" class="mui-tab-item mui-active" href="index.html">
-				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-icon mui-image-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
 			<a class="mui-tab-item" href="gift.html">
-				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-icon mui-image-gift"></span>
 				<span class="mui-tab-label">礼品</span>
 			</a>
 			<a class="mui-tab-item" href="community.html">
-				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-icon mui-image-contact"></span>
 				<span class="mui-tab-label">社区</span>
 			</a>
 			<a class="mui-tab-item" href="user.html">
-				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-icon mui-image-user"></span>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
 		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 

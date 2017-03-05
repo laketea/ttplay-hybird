@@ -9,3 +9,23 @@ ul{
 }
 
 .tc{ text-align:center;}
+
+.mui-popover{
+        display: none;
+        position: fixed;
+        width: 80%;
+        height: auto;
+        border-radius: 0;
+        left: 50%;
+        top: 50%;
+        margin: 0 auto;
+        z-index: 9999;
+        background-color: #fff;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .mui-popover-arrow{
+        display: none;
+    }

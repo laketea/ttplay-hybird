@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">天天玩</h1>
+		</header>-->
+		<div id="refreshContainer" class="mui-content">
+			<div class="inner-content">
+				<div class="header base">
+					<div class="userPhoto"><img class="photo avatar" src=""></div>
+					<div class="userName">
+						<p class="vip-name">Z伟</p>
+					</div>
+					<a onclick="onCollectClick()" class="collectButton"><img src="./images/btnCollect.png"></a>
+				</div>
+				<div class="main">
+					<!--banner start-->
+					<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+
+						</div>
+					</div>
+					<!--banner end-->
+					<!--user-tab start-->
+					<ul class="nav user-tab-bar">
+						<li class="user-tab user-game-tab tab-last-hot active" data-type="HOT"><span class="clickTab"><i class="hot"></i><p>热门</p></span></li>
+						<li class="user-tab user-game-tab tab-last-new" data-type="PUTAWAY"><span class="clickTab"><i class="new"></i><p>新上架</p></span></li>
+						<li class="user-tab tab-last-infor"><span class="clickTab"><i class="infor"></i><p>资讯</p></span></li>
+						<li class="user-tab user-game-tab tab-last-cat" data-type="OPENING"><span class="clickTab"><i class="cat"></i><p>新开服</p></span></li>
+					</ul>
+					<!--user-tab end-->
+					<!--lastPlay start-->
+					<div id="lastPlayedRegion">
+						<div id="lastPlayedWrapper">
+							<div class="recent">
+								<p class="section-title">最近在玩</p>
+								<div id="wrapper" class="recent-content">
+									<div id="scroller" style="">
+										<ul class="recent-games-list">
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--lastPlay end-->
+					<!--gameListRegion start-->
+					<div id="gameListRegion">
+						<div id="gameListWrapper">
+							<div class="games-list">
+								<p class="games-list-title">热门推荐</p>
+								<div class="container games-list-content">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--gameListRegion end-->
+				</div>
+
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/apis.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>

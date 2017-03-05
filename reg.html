@@ -35,6 +35,9 @@
 			}
 			.seconds{
 			}
+			#auth-code-row{
+				display: none;
+			}
 		</style>
 	</head>
 
@@ -47,21 +50,21 @@
 		    <form id='login-form' class="mui-input-group">
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input id='username' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<input id='username' type="text" class="mui-input-clear mui-input" placeholder="请输入账号\手机号">
 				</div>
-				<div class="mui-input-row">
+				<!--<div class="mui-input-row">
 					<label>手机号</label>
 					<input id='mobile' type="text" class="mui-input-clear mui-input" placeholder="手机号">
-				</div>
+				</div>-->
 				<div class="mui-input-row">
 					<label>密码</label>
 					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
 				</div>
-				<div class="mui-input-row">
+				<div class="mui-input-row" id="repeat-password-row">
 					<label>重复密码</label>
 					<input id='repeatpassword' type="password" class="mui-input-clear mui-input" placeholder="请再次输入密码">
 				</div>
-				<div class="mui-input-row">
+				<div class="mui-input-row" id="auth-code-row">
 					<label>验证码</label>
 					<input id='authcode' type="text" class="mui-input-clear mui-input" placeholder="请输入验证码">
 					<div id="captcha"><label id="captch-label">发送验证码</label><label id="wait-label">等待(<span id="seconds" class="seconds">60</span>)</label></div>
@@ -73,6 +76,7 @@
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/md5.js"></script>
 		<script src="js/apis.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/reg.js"></script>

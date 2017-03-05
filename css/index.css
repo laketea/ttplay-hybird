@@ -126,7 +126,7 @@
 	vertical-align: middle;
 }
 
-.user-tab span {
+.user-tab span{
 	display: block;
 	font-size: .33rem;
 	color: #232323;
@@ -136,9 +136,16 @@
 	position: relative;
 }
 
+.user-tab span p {
+	font-size: .33rem;
+}
+
 .user-tab.active span {
 	border-bottom: .02rem solid #ffb814;
-	color: #ffb814
+}
+
+.user-tab.active span p{
+	color: #ffb814;
 }
 
 .user-tab span i {
@@ -151,31 +158,31 @@
 }
 
 .user-tab span i.hot {
-	background-image: url(./images/2.png)
+	background-image: url(../images/2.png)
 }
 
 .user-tab span i.new {
-	background-image: url(./images/3.png)
+	background-image: url(../images/3.png)
 }
 
 .user-tab span i.infor {
-	background-image: url(./images/4.png)
+	background-image: url(../images/4.png)
 }
 
 .user-tab span i.cat {
-	background-image: url(./images/5.png)
+	background-image: url(../images/5.png)
 }
 
 .user-tab span i.gift {
-	background-image: url(./images/g1.png)
+	background-image: url(../images/g1.png)
 }
 
 .user-tab span i.today {
-	background-image: url(./images/g2.png)
+	background-image: url(../images/g2.png)
 }
 
 .user-tab span i.week {
-	background-image: url(./images/g3.png)
+	background-image: url(../images/g3.png)
 }
 
 .user-tab span p {}
@@ -270,7 +277,7 @@
 /*推荐游戏开始*/
 
 .games-list {
-	margin-bottom: 1.5rem;
+	/*margin-bottom: 1rem;*/
 	background-color: #fff;
 }
 
@@ -556,6 +563,7 @@
 	width: 3.6rem;
 	height: 1.28rem;
 	line-height: 1.28rem;
+	margin-top: 1rem;
 	border: .0267rem solid #555;
 	background: #e46457;
 	border-radius: .2rem;
@@ -640,6 +648,10 @@
 	float: none;
 }
 
+.gameDetail .game-enter-button.detail-join{
+	display: none;
+}
+
 .alert-mask {
 	position: fixed;
 	width: 100%;
@@ -715,3 +727,7 @@
 
 
 /*单游戏页面结束*/
+
+.my-games .opened-time{
+	display: none;
+}
