@@ -4,28 +4,303 @@ html {
 	color: #333;
 }
 
-ul{
+ul {
 	padding-left: 0;
 }
 
-.tc{ text-align:center;}
+.tc {
+	text-align: center;
+}
 
-.mui-popover{
-        display: none;
-        position: fixed;
-        width: 80%;
-        height: auto;
-        border-radius: 0;
-        left: 50%;
-        top: 50%;
-        margin: 0 auto;
-        z-index: 9999;
-        background-color: #fff;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -ms-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-    }
-    .mui-popover-arrow{
-        display: none;
-    }
+.mui-popover {
+	display: none;
+	position: fixed;
+	width: 80%;
+	height: auto;
+	border-radius: 0;
+	left: 50%;
+	top: 50%;
+	margin: 0 auto;
+	z-index: 9999;
+	background-color: #fff;
+	border-radius: 5px;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.mui-popover-arrow {
+	display: none;
+}
+
+.login-card {
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.login-head {
+	position: relative;
+	border-bottom: .05rem solid #e5e5e7;
+	width: 90%;
+	margin: 0 auto .7rem auto;
+	padding: .4rem 0 0.4rem 0;
+	text-align: center;
+}
+
+.login-head img {
+	width: 2.45rem;
+	height: 2.45rem;
+}
+
+.login-head span {
+	position: relative;
+	top: -.8rem;
+	font-size: 1rem;
+}
+
+.login-head strong {
+	font-size: 1.5rem;
+	position: absolute;
+	right: 0;
+	top: 1.2rem;
+	height: 1rem;
+	line-height: .8rem;
+}
+
+.login-info,
+.login-mode,
+.pay-btn {
+	width: 82%;
+	margin: 0 auto;
+}
+
+.login-info {
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+
+.login-info .none {
+	display: none;
+}
+
+.login-info .ver-code {
+	position: relative;
+}
+
+.login-info #mAuto {
+	border-bottom: 0;
+	font-size: .8rem;
+	display: none;
+	color: #444;
+	position: relative;
+	top: 1rem;
+}
+
+.login-info img {
+	position: absolute;
+	right: 0;
+	bottom: .1rem;
+	height: 1.65rem;
+}
+
+.login-info>div {
+	padding-bottom: .25rem;
+	border-bottom: .05rem solid #3997EE;
+}
+
+.login-info>div {
+	padding-top: .75rem;
+}
+
+.login-info>div:last-child {
+	border: 0;
+	padding-top: 1.5rem;
+	padding-bottom: .45rem;
+}
+
+.login-info>div:last-child>p {
+	font-size: .65rem;
+	color: #0554A5;
+	margin-top: .5rem;
+	cursor: pointer;
+}
+
+.login-info>div:last-child p span {
+	padding: 0 .15rem;
+}
+
+.login-info i {
+	width: 10%;
+	color: #3997EE;
+	font-size: 1rem;
+	position: relative;
+	top: .1rem;
+}
+
+.login-info .result-box {
+	border-bottom: 0;
+	font-size: .9rem;
+}
+
+.login-info .result-box i {
+	color: #1FCA14;
+	font-size: 1.25rem;
+	padding-right: .5rem;
+}
+
+.login-info input {
+	width: 90%;
+	border: none;
+	background: none;
+	font-size: .8rem;
+	padding: 0;
+}
+
+.login-info .sms-code {
+	text-align: center;
+}
+
+.login-info>div>a,
+.pay-btn>a {
+	display: block;
+	width: 100%;
+	padding: .4rem 0;
+	border: .05rem solid #3997EE;
+	background: #3997EE;
+	color: #fff;
+	text-decoration: none;
+	line-height: 1;
+	-webkit-border-radius: .1rem;
+	border-radius: .1rem;
+}
+
+.login-info>div>a i {
+	color: #fff;
+	width: .7rem;
+	overflow: hidden;
+	font-size: .7rem;
+	position: relative;
+	top: .05rem;
+}
+
+.custom-login-box{
+	display: none;
+}
+
+.custom-login-box fieldset {
+	border: 0;
+	border-top: .05rem solid #3997EE;
+	margin-top: 0;
+	text-align: center;
+	font-size: 0.4rem;
+}
+
+.custom-login-bo fieldset legend {
+	padding: 0 .25rem;
+	color: #3997EE;
+}
+
+.login-mode {
+	margin-bottom: 0.2rem;
+}
+
+.login-mode ol {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding-top: 0rem;
+	padding-left: 0;
+	list-style: none;
+}
+
+.login-mode ol li {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	cursor: pointer;
+}
+
+.login-mode ol li div {
+	width: 1.8rem;
+	height: 1.8rem;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	border: .05rem solid #00D20D;
+	color: #00D20D;
+	line-height: 1.5;
+	margin: 0 auto;
+}
+
+.login-mode ol li.qq div {
+	border: .05rem solid #4EA9EF;
+	color: #4EA9EF;
+}
+
+.login-mode ol li.sina div {
+	border: .05rem solid #D43039;
+	color: #D43039;
+}
+
+.login-mode ol li.mobile div {
+	border: .05rem solid #47E8C9;
+	color: #47E8C9;
+}
+
+.login-mode ol li i {
+	font-size: 1.5rem;
+}
+
+.login-mode>a {
+	display: none;
+	color: #9FABB7;
+	padding-top: 0.3rem;
+}
+
+.login-tip {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	font-size: .65rem;
+	margin-top: 1rem;
+	height: .65rem;
+}
+
+.login-tip a {
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	flex: 1;
+	color: #0554A5;
+	text-decoration: none;
+	display: block;
+	line-height: 1;
+	text-align: right;
+}
+
+.login-tip a:first-child {
+	border-left: 0;
+	text-align: left;
+}
+
+.custom-login-box .mui-input-group:before{
+	display: none;	
+}
+
+.custom-login-box .mui-input-group:after{
+	display: none;	
+}
+
+.custom-login-box .mui-btn-block{
+	padding: 5px;
+	margin: 15px 0;
+}
+
+.custom-login-box .link-area{
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+
+
+

@@ -1,5 +1,9 @@
 {
-	"@platforms": ["android", "iPhone", "iPad"],
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
 	"id": "H5349DAF9",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "ttplay",/*应用名称，程序桌面图标名称*/
 	"version": {
@@ -18,49 +22,72 @@
 	},
 	"permissions": {
 		"Accelerometer": {},
-        "Audio": {},
-        "Cache": {
-            "description": "管理应用缓存"
-        },
-        "Camera": {},
-        "Console": {
-            "description": "跟踪调试输出日志"
-        },
-        "Contacts": {},
-        "Device": {},
-        "Downloader": {},
-        "Events": {
-            "description": "应用扩展事件"
-        },
-        "File": {},
-        "Gallery": {},
-        "Geolocation": {},
-         "Invocation": {},
-        "Messaging": {},
-        "Orientation": {},
-        "Proximity": {},
-        "Storage": {},
-        
-        "Uploader": {},
-        "Runtime": {},
-        "XMLHttpRequest": {},
-        "Zip": {},
-        "Barcode": {},
-        "Maps": {},
-        "Speech": {},
-        "Webview":{},
-        "NativeUI":{},
-        "Navigator":{},
-        "NativeObj":{}
+		"Audio": {},
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		"Contacts": {},
+		"Device": {},
+		"Downloader": {},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {},
+		"Gallery": {},
+		"Geolocation": {},
+		"Invocation": {},
+		"Messaging": {},
+		"Orientation": {},
+		"Proximity": {},
+		"Storage": {},
+
+		"Uploader": {},
+		"Runtime": {},
+		"XMLHttpRequest": {},
+		"Zip": {},
+		"Barcode": {},
+		"Maps": {},
+		"Speech": {},
+		"Webview": {},
+		"NativeUI": {},
+		"Navigator": {},
+		"NativeObj": {},
+		"OAuth": {
+			"description": "登录授权"
+		}
 	},
 	"plus": {
 		"splashscreen": {
 			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-			"waiting": true,"delay":"0"
+			"waiting": true,
+			"delay": "0"
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
+			"plugins": {
+				"oauth": {
+					"qq": {
+						"appid": "101383378",
+						"description": "qq登录"
+					},
+					"sina": {
+						"appkey": "4143402553",
+						"appsecret": "934ce69beafff370035c7d66893a1850",
+						"redirect_uri": "www.badiu.com",
+						"description": "新浪微博登录"
+					},
+					"weixin": {
+						"appid": "wx9ccd002c2937c7f3",
+						"appsecret": "1bfd1df3ebc4dbc1e51c6af9bc32c112",
+						"description": "微信登录"
+					}
+				}
+			},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -74,9 +101,40 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
+					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_SMS\"/>"
+				]
 			},
-			"orientation": ["portrait-primary", "portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"orientation": [
+				"portrait-primary",
+				"portrait-secondary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
@@ -89,7 +147,9 @@
 						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
 						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"settings-retina": "unpackage/res/icons/58x58.png","retina8":"unpackage/res/icons/180x180.png","settings-retina8":"unpackage/res/icons/87x87.png"
+						"settings-retina": "unpackage/res/icons/58x58.png",
+						"retina8": "unpackage/res/icons/180x180.png",
+						"settings-retina8": "unpackage/res/icons/87x87.png"
 					},
 					"ipad": {
 						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
@@ -207,12 +267,15 @@
 					"images/gift-active.png",
 					"images/user-active.png",
 					"images/contact-active.png",
-					"js/app.js"
+					"js/app.js",
+					"js/popver.js",
+					null
 				],
 				"refer": [
 					"gift.html",
 					"community.html",
-					"user.html"
+					"user.html",
+					"login_view.html"
 				],
 				"priority": 0
 			},
@@ -349,7 +412,9 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"js/md5.js",
-					"images/btnCollect.png"
+					"images/btnCollect.png",
+					"js/popver.js",
+					null
 				],
 				"refer": [
 					"game.html",
@@ -392,7 +457,8 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"js/zepto.js",
-					"js/md5.js"
+					"js/md5.js",
+					"js/popver.js"
 				],
 				"refer": [
 					"game.html",
@@ -425,6 +491,29 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"login_view.html": {
+				"resources": [
+					"js/login_view.js",
+					"js/common.js",
+					"js/apis.js",
+					"js/reg.js",
+					"js/md5.js",
+					"js/app.js",
+					"css/base.css",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/popver.js",
+					"js/zepto.js",
+					"fonts/mui.ttf",
+					"images/icon-qq.png",
+					"css/index.css",
+					"images/icon-sina.png"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
@@ -438,8 +527,8 @@
 			]
 		}
 	},
-	"unpackage":[
-	  "css/mui.css",
-	  "js/mui.js"
+	"unpackage": [
+		"css/mui.css",
+		"js/mui.js"
 	]
 }

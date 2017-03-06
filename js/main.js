@@ -8,6 +8,7 @@
 	};
 
 	var aniShow = {};
+	var loginView;
 
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
 	mui.plusReady(function() {
@@ -15,6 +16,10 @@
 
 		window.addEventListener('show', function(event) {
 			mui.trigger(document.getElementById("defaultTab"), 'tap');
+		});
+		
+		window.addEventListener('showLogin', function(){
+			
 		});
 		for(var i = 0; i < 4; i++) {
 			var temp = {};
@@ -27,6 +32,15 @@
 			}
 			self.append(sub);
 		}
+		
+		loginView = plus.webview.create('login_view.html','login_view.html',{
+			top: '0px',
+			bottom: '0px',
+			background: 'transparent'
+		});
+		loginView.hide();
+		self.append(loginView);
+		
 
 		var backButtonPress = 0;
 		$.back = function(event) {
@@ -46,20 +60,29 @@
 	//当前激活选项
 	var activeTab = subpages[0];
 	var title = document.getElementById("title");
+//	var pop = new popover('#login-pop');
+	
 	//选项卡点击事件
 	mui('.mui-bar-tab').on('tap', 'a', function(e) {
 
 		var targetTab = this.getAttribute('href');
+		
 		plus.webview.hide("game");
 
 		if(targetTab == 'community.html') {
 			mui.alert("板块正在建设中...");
+		
 			return;
 		}
 		if(targetTab == 'user.html' && !app.isLogged()){
-			mui.alert("请先登录");
+			loginView.show();
+			mui.fire(loginView,"showLogin");
 			return;
+		}else{
+			loginView.hide();
+			mui.fire(loginView,"hideLogin");
 		}
+		
 		if(targetTab == activeTab) {
 			return;
 		}

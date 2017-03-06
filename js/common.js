@@ -167,9 +167,9 @@ function renderGiftItem(item) {
 			mui.prompt("请点击输入框复制礼包码每个帐号只能领取一次", res.number, "详情", ['', '复制'], function() {
 				copyToClipAndroid(res.number);
 			}, 'div');
-			
+
 			document.querySelector('.mui-popup-input input').value = res.number;
-			$('.mui-popup-input input').attr("readonly",true);
+			$('.mui-popup-input input').attr("readonly", true);
 		});
 	});
 
@@ -216,6 +216,10 @@ function renderGameGiftItem(item) {
 	});
 	$item.find('.game-enter-button').on('tap', function(e) {
 		e.stopPropagation();
+		if(!window.app.getState().id){
+			mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+			return;
+		}
 		apis.presentGift({
 			mid: app.getState().id,
 			pid: item.id,
@@ -296,6 +300,10 @@ function getDateTime(times) {
 }
 
 function playGame(item) {
+	if(!window.app.getState().id){
+		mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+		return;
+	}
 	plus.nativeUI.showWaiting();
 	apis.playGame({
 		gid: item.gid || item.id,

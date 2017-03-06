@@ -41,41 +41,6 @@
 			}, 600);
 		}
 
-		//检查 "登录状态/锁屏状态" 结束
-		var loginButton = doc.getElementById('login');
-		var accountBox = doc.getElementById('account');
-		var passwordBox = doc.getElementById('password');
-		var autoLoginButton = doc.getElementById("autoLogin");
-		var regButton = doc.getElementById('reg');
-		var forgetButton = doc.getElementById('forgetPassword');
-		loginButton.addEventListener('tap', function(event) {
-			var loginInfo = {
-				username: accountBox.value,
-				password: passwordBox.value,
-				cid: 1,
-				ccid: 2
-			};
-			if(loginInfo.username.length < 5) {
-				return plus.nativeUI.toast('账号最短为 5 个字符');
-			}
-			if(loginInfo.password.length < 6) {
-				return plus.nativeUI.toast('密码最短为 6 个字符');
-			}
-			plus.nativeUI.showWaiting();
-			apis.login(loginInfo, function(res) {
-				res.nickname = res.username;
-				app.createState(res.data);
-				plus.nativeUI.closeWaiting();
-				toMain();
-			}, function(error) {
-				plus.nativeUI.closeWaiting();
-				if(error) {
-					plus.nativeUI.toast(error.msg);
-					return;
-				}
-			});
-		});
-
 		regButton.addEventListener('tap', function(event) {
 			$.openWindow({
 				url: 'reg.html',
@@ -88,7 +53,7 @@
 					popGesture: 'hide'
 				},
 				waiting: {
-					autoShow: false
+					autoSho4w: false
 				}
 			});
 		}, false);

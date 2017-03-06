@@ -1,0 +1,1 @@
+ var weixin = { "openid": "oRrdQtzr33BY9-18-lhWecPT2NHo", "nickname": "Z伟", "sex": 1, "language": "zh_CN", "city": "成都", "province": "四川", "country": "中国", "headimgurl": "http://wx.qlogo.cn/mmopen/R9SHK9xib1pmh1ClmDOXbfJcIEtpHEcWv8yIjaslKmIFtbFLW1h1lQTKHZYXDbM8AWTfR4TnXu6Zx0jChNHbR0zKC3co8PKhg/0", "privilege": [], "unionid": "oU5Yyt2FH5l77-bhz7RLdSI3xrow" }

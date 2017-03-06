@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<style>
+		html,body{
+			background: transparent;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="login-pop" class="mui-popover">
+			<div class="login-card">
+				<!--页眉，放置标题-->
+				<div class="login-head">游戏登录</div>
+
+				<div class="custom-login-box">
+					<form id='login-form' class="mui-input-group">
+						<div class="mui-input-row">
+							<label>账号</label>
+							<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+						</div>
+						<div class="mui-input-row">
+							<label>密码</label>
+							<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+						</div>
+					</form>
+					<div class="mui-content-padded">
+						<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+						<div class="link-area">
+							<a id='reg'>注册账号</a>
+						</div>
+						<fieldset class="login-yg"><legend>其他登录方式</legend></fieldset>
+					</div>
+				</div>
+				<!--内容区-->
+				<div class="login-mode">
+					<ol id="login-list">
+						<li id="weixin" title="微信登录">
+							<div><i class="icon-wx"></i></div>
+						</li>
+						<li id="qq" title="QQ登录" class="qq" style="display: list-item;">
+							<div><i class="icon-qq"></i></div>
+						</li>
+						<li id="sinaweibo" title="新浪微博登录" class="sina" style="display: list-item;">
+							<div><i class="icon-sina"></i></div>
+						</li>
+					</ol>
+					<a id="tagYgLogin" href="javascript:;" style="display: block;text-align: center;">天天玩账号登录</a>
+				</div>
+
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/zepto.js"></script>
+		<script src="js/popver.js"></script>
+		<script src="js/apis.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/reg.js"></script>
+		<script src="js/login_view.js"></script>
+	</body>
+
+</html>

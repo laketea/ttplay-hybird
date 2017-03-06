@@ -731,3 +731,21 @@
 .my-games .opened-time{
 	display: none;
 }
+
+.icon-qq{
+	width: 60px;
+	height: 60px;
+	background: url(../images/icon-qq.png);
+}
+
+.icon-wx{
+	width: 60px;
+	height: 60px;
+	background: url(../images/icon-wexin.png);
+}
+
+.icon-sina{
+	width: 60px;
+	height: 60px;
+	background: url(../images/icon-sina.png);
+}

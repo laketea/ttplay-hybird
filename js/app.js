@@ -42,7 +42,7 @@
 	 * 获取当前状态
 	 **/
 	owner.getState = function() {
-		var stateText = JSON.parse(localStorage.getItem('$state') || "{nickname: '游客'}");
+		var stateText = JSON.parse(localStorage.getItem('$state') || '{"nickname": "游客"}');
 		stateText.nickname = stateText.nickname || stateText.account;
 		return stateText;
 	};
