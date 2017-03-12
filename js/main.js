@@ -19,7 +19,8 @@
 		});
 		
 		window.addEventListener('showLogin', function(){
-			
+			loginView.show();
+			mui.fire(loginView,"showLogin");
 		});
 		for(var i = 0; i < 4; i++) {
 			var temp = {};
@@ -79,8 +80,8 @@
 			mui.fire(loginView,"showLogin");
 			return;
 		}else{
-			loginView.hide();
-			mui.fire(loginView,"hideLogin");
+//			loginView.hide();
+//			mui.fire(loginView,"hideLogin");
 		}
 		
 		if(targetTab == activeTab) {

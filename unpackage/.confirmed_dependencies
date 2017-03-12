@@ -126,7 +126,8 @@
       "js/md5.js",
       "fonts/mui.ttf",
       "game_sub.html",
-      "images/btnCollect.png"
+      "images/btnCollect.png",
+      "login_view.html"
     ],
     "refer": [
       "play.html"

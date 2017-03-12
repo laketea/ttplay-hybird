@@ -159,6 +159,15 @@ function renderGiftItem(item) {
 	});
 	$item.find('.game-enter-button').on('tap', function(e) {
 		e.stopPropagation();
+		if(!window.app.getState().id ){
+			if(window.loginView){
+				window.loginView.show();
+				mui.fire(window.loginView,"showLogin");
+			}else{
+				mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+			}
+			return;
+		}
 		apis.presentGift({
 			mid: app.getState().id,
 			pid: item.id,
@@ -216,8 +225,13 @@ function renderGameGiftItem(item) {
 	});
 	$item.find('.game-enter-button').on('tap', function(e) {
 		e.stopPropagation();
-		if(!window.app.getState().id){
-			mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+		if(!window.app.getState().id ){
+			if(window.loginView){
+				window.loginView.show();
+				mui.fire(window.loginView,"showLogin");
+			}else{
+				mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+			}
 			return;
 		}
 		apis.presentGift({
@@ -301,7 +315,12 @@ function getDateTime(times) {
 
 function playGame(item) {
 	if(!window.app.getState().id){
-		mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+		if(window.loginView){
+			window.loginView.show();
+			mui.fire(window.loginView,"showLogin");
+		}else{
+			mui.fire(plus.webview.getLaunchWebview(),'showLogin');
+		}
 		return;
 	}
 	plus.nativeUI.showWaiting();

@@ -115,7 +115,10 @@
 .user-tab-bar {
 	background-color: #fff;
 	margin-bottom: .26rem;
-	text-align: center
+	text-align: left;
+	padding: 0;
+	margin-left:0;
+	margin-right: 0;
 }
 
 .user-tab {

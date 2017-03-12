@@ -51,6 +51,15 @@
 	mui.plusReady(function() {
 		var self = plus.webview.currentWebview();
 		var game = self.game;
+		
+		window.loginView = plus.webview.create('login_view.html','login_view.html',{
+			top: '0px',
+			bottom: '0px',
+			background: 'transparent'
+		});
+		loginView.hide();
+		self.append(loginView);
+		
 		doc.querySelector('.detail-enter').addEventListener('tap', function() {
 			playGame(game);
 		});
@@ -87,6 +96,10 @@
 		var self = plus.webview.currentWebview();
 		self.game = game;
 		plus.nativeUI.showWaiting();
+		
+		if(window.loginView) {
+			window.loginView.hide();
+		}
 		
 		//获取游戏信息
 		apis.getGameDetail(game.gid || game.id, function(res) {
