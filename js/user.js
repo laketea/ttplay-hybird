@@ -28,7 +28,7 @@
 	});
 
 	function pulldownRefresh() {
-		page = 1;
+		page = 0;
 		maxPage = 100;
 		load(ready, false);
 
@@ -58,7 +58,8 @@
 	function load(ready, isAppend) {
 		firstLoad && plus.nativeUI.showWaiting();
 		apis.getPlayedGames({
-			mid: user.id
+			mid: user.id,
+			page: page + 1
 		}, function(res) {
 			renderGameList($(".games-list-content"), res.lists, isAppend, true, true);
 			maxPage = Math.ceil(parseInt(res.total || 0) / res.pagesize);
@@ -71,18 +72,31 @@
 			ready();
 		});
 	}
-
-	mui.plusReady(function() {
-
+	
+	function renderHeader() {
+		user = app.getState();
 		userNameBox.innerHTML = ("昵称：" + user.nickname);
 		idBox.innerHTML = user.id;
 		avatarBox.src = user.avatar;
+		
+	}
+
+	mui.plusReady(function() {
+
+		renderHeader();
+		
+		window.addEventListener('reset:user', function(){
+			renderHeader();
+			if(user.id){
+				pulldownRefresh();
+			}
+		});
 
 		doc.querySelector('.btnLogout').addEventListener('tap', function() {
 			mui.confirm('是否确认退出？', '提示', ['确定', '取消'], function(res) {
 				if(res.index == 0) {
 					app.clearState();
-					plus.webview.getLaunchWebview().show();
+					mui.fire(plus.webview.getLaunchWebview(),"logout");
 				}
 			}, 'div');
 		});

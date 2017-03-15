@@ -114,7 +114,7 @@ function toGameDetail(game) {
 	} else {
 		mui.openWindow({
 			url: './game.html',
-			id: 'game',
+			id: 'game.html',
 			styles: {
 				top: '0px',
 				bottom: '51px'

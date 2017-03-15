@@ -18,6 +18,23 @@
 			mui.trigger(document.getElementById("defaultTab"), 'tap');
 		});
 		
+		//退出登陆时候，给个子页面发送reset消息
+		window.addEventListener('logout', function(event) {
+			mui.fire(plus.webview.getWebviewById('index_sub.html'),'reset:user');
+			mui.fire(plus.webview.getWebviewById('gift_sub.html'),'reset:user');
+			mui.fire(plus.webview.getWebviewById('user_sub.html'),'reset:user');
+			mui.trigger(document.getElementById("defaultTab"), 'tap');
+		});
+		
+		window.addEventListener('login', function(event) {
+			mui.fire(plus.webview.getWebviewById('index_sub.html'),'reset:user');
+			mui.fire(plus.webview.getWebviewById('gift_sub.html'),'reset:user');
+			mui.fire(plus.webview.getWebviewById('user_sub.html'),'reset:user');
+			if(plus.webview.getWebviewById('game.html')){
+				mui.fire(plus.webview.getWebviewById('game.html'),'reset:user');
+			}
+		});
+		
 		window.addEventListener('showLogin', function(){
 			loginView.show();
 			mui.fire(loginView,"showLogin");

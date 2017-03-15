@@ -178,11 +178,21 @@
 			options.checkReady();
 		});
 	}
+	
+	function renderHeader(){
+		user = app.getState()
+		userNameBox.innerHTML = user.nickname;
+		avatarBox.src = user.avatar;
+	}
 
 	mui.plusReady(function() {
 
-		userNameBox.innerHTML = user.nickname;
-		avatarBox.src = user.avatar;
+		renderHeader();
+		
+		window.addEventListener('reset:user', function(){
+			renderHeader();
+			pulldownRefresh();
+		});
 
 		pulldownRefresh();
 

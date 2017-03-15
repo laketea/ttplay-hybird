@@ -156,6 +156,7 @@
 					app.createState(res.data);
 					plus.nativeUI.closeWaiting();
 					pop.close();
+					mui.fire(plus.webview.getLaunchWebview(),"login");
 				}, function(error) {
 					plus.nativeUI.closeWaiting();
 					pop.close();

@@ -13,10 +13,6 @@
 	doc.querySelector(".vip-name").innerHTML = user.nickname;
 	doc.querySelector(".avatar").src = user.avatar;
 
-	window.addEventListener('reload', function(event) {
-		reload(event.detail);
-	});
-
 	mui.init({
 		pullRefresh: {
 			container: '#refreshContainer', //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -51,6 +47,16 @@
 	mui.plusReady(function() {
 		var self = plus.webview.currentWebview();
 		var game = self.game;
+		
+		window.addEventListener('reload', function(event) {
+			reload(event.detail);
+		});
+		
+		window.addEventListener('reset:user', function(event) {
+			user = app.getState();
+			doc.querySelector(".vip-name").innerHTML = user.nickname;
+			doc.querySelector(".avatar").src = user.avatar;
+		});
 		
 		window.loginView = plus.webview.create('login_view.html','login_view.html',{
 			top: '0px',

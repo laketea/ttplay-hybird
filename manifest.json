@@ -269,11 +269,11 @@
 					"images/contact-active.png",
 					"js/app.js",
 					"js/popver.js",
-					null
+					null,
+					"community.html"
 				],
 				"refer": [
 					"gift.html",
-					"community.html",
 					"user.html",
 					"login_view.html"
 				],
@@ -509,7 +509,8 @@
 					"fonts/mui.ttf",
 					"images/icon-qq.png",
 					"css/index.css",
-					"images/icon-sina.png"
+					"images/icon-sina.png",
+					"images/icon-weixin.png"
 				],
 				"refer": [
 					"login.html"

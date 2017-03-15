@@ -116,11 +116,20 @@
 			ready();
 		});
 	}
+	
+	function renderHeader() {
+		user = app.getState();
+		userNameBox.innerHTML = user.nickname;
+		avatarBox.src = user.avatar;
+	}
 
 	mui.plusReady(function() {
 
-		userNameBox.innerHTML = user.nickname;
-		avatarBox.src = user.avatar;
+		renderHeader();
+		
+		window.addEventListener('reset:user', function(){
+			renderHeader();
+		});
 		//获取游戏
 		mui(".user-tab-bar").on('tap', '.user-tab', function(event) {
 			type = this.getAttribute("data-type");
