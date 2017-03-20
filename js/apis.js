@@ -12,6 +12,15 @@
 			failed(error);
 		});
 	};
+	
+	owner.authLogin = function(data, done, failed) {
+		return post("/Api/App/authLogin", encode(data), done, function(error){
+			if(error.status == 0) {
+				console.log('第三方注册失败');
+			}
+			failed(error);
+		});
+	}
 
 	owner.reg = function(data, done, failed) {
 		return post("/Api/App/register", encode(data), done, function(error) {

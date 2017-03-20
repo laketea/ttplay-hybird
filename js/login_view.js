@@ -75,15 +75,97 @@
 				mui.toast("未授权登录！");
 			} else {
 				s.getUserInfo(function(e) {
-					var josnStr = JSON.stringify(s.userInfo);
-					var jsonObj = s.userInfo;
-					console.log("获取用户信息成功：" + josnStr);
+
+					switch(s.id) {
+						case 'weixin':
+							packData(
+								s.userInfo.openid,
+								'WEIXIN',
+								0,
+								s.userInfo.nickname,
+								s.userInfo.sex,
+								s.userInfo.headimgurl,
+								s.userInfo.country,
+								s.userInfo.province,
+								s.userInfo.city
+							);
+						break;
+						case 'qq':
+							var g = 2;
+							if(s.userInfo.gender == '男') {
+								g = 1;
+							}else if(s.userInfo.gender == '女') {
+								g = 0;
+							}
+							packData(
+								s.authResult.openid,
+								'QQ',
+								0,
+								s.userInfo.nickname,
+								g,
+								s.userInfo.figureurl_qq_2,
+								s.userInfo.country,
+								s.userInfo.province,
+								s.userInfo.city
+							);
+						break;
+						case 'sinaweibo':
+							packData(
+								s.authResult.uid,
+								'WEIBO',
+								0,
+								s.userInfo.name,
+								s.userInfo.sex,
+								s.userInfo.avatar_large,
+								s.userInfo.location,
+								'',
+								''
+							);
+						break;
+					}
+
+					//console.log(JSON.stringify(s));
+					//var josnStr = JSON.stringify(s.userInfo);
+					//var jsonObj = s.userInfo;
+					//console.log("获取用户信息成功：" + josnStr);
 //					showData(type, jsonObj);
-					authLogout();
+					//注销登录
+					//authLogout();
 				}, function(e) {
 					alert("获取用户信息失败：" + e.message + " - " + e.code);
 				});
 			}
+		}
+		
+		//封装API需要的数据，调用
+		function packData(openid,type,cid, nickname,sex,avatar,country,province,city) {
+			var authLoginInfo = {
+				openid:openid,
+				type:type,
+				cid:cid,
+				nickname:nickname,
+				sex:sex,
+				avatar:avatar,
+				country:country,
+				province:province,
+				city:city
+			};
+			console.log('请求数据：'+JSON.stringify(authLoginInfo));
+			apis.authLogin(authLoginInfo,function(res) {
+					console.log(res.status);
+					//res.nickname = res.username;
+					//app.createState(res.data);
+					//plus.nativeUI.closeWaiting();
+					//pop.close();
+					//mui.fire(plus.webview.getLaunchWebview(),"login");
+				}, function(error) {
+					//plus.nativeUI.closeWaiting();
+					//pop.close();
+					//if(error) {
+					//	plus.nativeUI.toast(error.msg);
+						//return;
+				}
+			});
 		}
 		// 显示用户头像信息
 //		function showData(type, data) {
@@ -141,8 +223,8 @@
 				var loginInfo = {
 					username: accountBox.value,
 					password: passwordBox.value,
-					cid: 1,
-					ccid: 2
+					cid: 0,
+					ccid: 0
 				};
 				if(loginInfo.username.length < 5) {
 					return plus.nativeUI.toast('账号最短为 5 个字符');
