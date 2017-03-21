@@ -12,12 +12,34 @@
 		html,body{
 			background: transparent;
 		}
+		#reg-card{
+			display: none;
+		}
+		
+		.mui-input-row{
+			position: relative;
+		}
+		.mui-input-row #captch-label,.mui-input-row #wait-label{
+			position: absolute;
+			top:0;
+			right:0;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 0.3rem;
+			text-align: center;
+			padding: 0;
+		}
+		.mui-input-row #wait-label{
+			display: none;
+			color: #666;
+		}
 		</style>
 	</head>
 
 	<body>
 		<div id="login-pop" class="mui-popover">
-			<div class="login-card">
+			<div class="login-card" id="login-card" >
 				<!--页眉，放置标题-->
 				<div class="login-head">游戏登录</div>
 
@@ -35,7 +57,7 @@
 					<div class="mui-content-padded">
 						<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
 						<div class="link-area">
-							<a id='reg'>注册账号</a>
+							<a id='reg-link'>注册账号</a>
 						</div>
 						<fieldset class="login-yg"><legend>其他登录方式</legend></fieldset>
 					</div>
@@ -54,6 +76,39 @@
 						</li>
 					</ol>
 					<a id="tagYgLogin" href="javascript:;" style="display: block;text-align: center;">天天玩账号登录</a>
+				</div>
+
+			</div>
+			<div class="login-card" id="reg-card">
+				<div class="login-head">用户注册</div>
+	
+				<div class="custom-login-box">
+					<form id='login-form' class="mui-input-group">
+						<div class="mui-input-row">
+							<label>账号</label>
+							<input id='username_reg' type="text" class="mui-input-clear mui-input" placeholder="请输入账号\手机号">
+						</div>
+						<div class="mui-input-row">
+							<label>密码</label>
+							<input id='password_reg' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+						</div>
+						<div class="mui-input-row" id="repeat-password-row">
+							<label>重复密码</label>
+							<input id='repeatpassword_reg' type="password" class="mui-input-clear mui-input" placeholder="请再次输入密码">
+						</div>
+						<div class="mui-input-row" id="auth-code-row">
+							<label>验证码</label>
+							<input id='authcode_reg' type="text" class="mui-input-clear mui-input" placeholder="请输入验证码">
+							<div id="captcha"><label id="captch-label">发送验证码</label><label id="wait-label">等待(<span id="seconds" class="seconds">60</span>)</label></div>
+						</div>
+					</form>
+					<div class="mui-content-padded">
+						<button id='reg-btn' class="mui-btn mui-btn-block mui-btn-primary">注册</button>
+						<div class="link-area">
+							<a id='login-link'>登陆</a>
+						</div>
+
+					</div>
 				</div>
 
 			</div>

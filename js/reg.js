@@ -1,36 +1,32 @@
-(function($, doc) {
+(function(mui, doc) {
 	var apis = window.apis,
 		app = window.app;
 
-	$.plusReady(function() {
+	window.bindReg = function() {
 
-		var loginPage = $.preload({
-			"id": 'login',
-			"url": 'login.html'
-		});
 		var toLogin = function() {
-			var id = setInterval(function() {
-				clearInterval(id);
-				$.fire(loginPage, 'show', null);
-				loginPage.show("pop-in");
-			}, 20);
+			$(".custom-login-box").show();
+			$('#login-card').show();
+			$('#reg-card').hide();
 		};
 
-		var regButton = doc.getElementById('reg');
-		var usernameBox = doc.getElementById('username');
-		var passwordBox = doc.getElementById('password');
-		var repeatPasswordBox = doc.getElementById('repeatpassword');
-		var authCodeBox = doc.getElementById("authcode");
+		var regButton = doc.getElementById('reg-btn');
+		var usernameBox = doc.getElementById('username_reg');
+		var passwordBox = doc.getElementById('password_reg');
+		
+		var repeatPasswordBox = doc.getElementById('repeatpassword_reg');
+		var authCodeBox = doc.getElementById("authcode_reg");
 		var repeatPasswordRowBox = doc.getElementById("repeat-password-row");
 		var authCodeRowBox = doc.getElementById("auth-code-row");
 		var mobileReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
 		
-		usernameBox.addEventListener("blur", function(){
+		usernameBox.addEventListener("blur", function() {
 			var userName = usernameBox.value;
-			if(userName && mobileReg.test(userName)){
+			if(userName && mobileReg.test(userName)) {
+				
 				authCodeRowBox.style.display = 'block';
 				repeatPasswordRowBox.style.display = 'none';
-			}else{
+			} else {
 				authCodeRowBox.style.display = 'none';
 				repeatPasswordRowBox.style.display = 'block';
 			}
@@ -53,7 +49,7 @@
 
 			if(mobileReg.test(regInfo.username)) {
 				regInfo.mobile = regInfo.username
-			}else{
+			} else {
 				regInfo.mobile = 0;
 			}
 
@@ -68,7 +64,7 @@
 			}
 
 			apis.reg(regInfo, function() {
-				$.alert("注册成功，请登录!", "恭喜", "确定", function() {
+				mui.alert("注册成功，请登录!", "恭喜", "确定", function() {
 					toLogin();
 				});
 			}, function(error) {
@@ -85,7 +81,7 @@
 
 		captchBtn.addEventListener('tap', function() {
 			var mobile = usernameBox.value;
-			if(!mobile || !mobileReg.test(mobile)){
+			if(!mobile || !mobileReg.test(mobile)) {
 				plus.nativeUI.toast("手机号格式错误");
 				return;
 			}
@@ -108,6 +104,6 @@
 				}
 			}, 1000);
 		});
-	})
+	};
 
 }(mui, document));

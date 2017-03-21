@@ -8,9 +8,23 @@
 
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
 	mui.plusReady(function() {
+		
+		
 
 		var settings = app.getSettings();
 		var state = app.getState();
+		
+		bindReg();
+		
+		document.getElementById('reg-link').addEventListener('tap', function() {
+			$('#login-card').hide();
+			$('#reg-card').show();
+		})
+		
+		document.getElementById('login-link').addEventListener('tap', function() {
+			$('#login-card').show();
+			$('#reg-card').hide();
+		})
 
 		plus.oauth.getServices(function(services) {
 			auths = services;
