@@ -3,6 +3,8 @@
 	mui.init();
 
 	var auths = [];
+	
+	var pop;
 
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
 	mui.plusReady(function() {
@@ -32,6 +34,7 @@
 		// 登录操作
 		function authLogin(type) {
 			var s;
+			plus.nativeUI.showWaiting();
 			for(var i = 0; i < auths.length; i++) {
 				if(auths[i].id == type) {
 					s = auths[i];
@@ -39,13 +42,15 @@
 				}
 			}
 			if(!s.authResult) {
+				pop.close();
 				s.login(function(e) {
-					mui.toast("登录认证成功！");
 					authUserInfo(type);
 				}, function(e) {
+					plus.nativeUI.closeWaiting();
 					mui.toast("登录认证失败！");
 				});
 			} else {
+				plus.nativeUI.closeWaiting();
 				mui.toast("已经登录认证！");
 			}
 		}
@@ -72,10 +77,10 @@
 				}
 			}
 			if(!s.authResult) {
+				plus.nativeUI.closeWaiting();
 				mui.toast("未授权登录！");
 			} else {
 				s.getUserInfo(function(e) {
-
 					switch(s.id) {
 						case 'weixin':
 							packData(
@@ -123,16 +128,9 @@
 							);
 						break;
 					}
-
-					//console.log(JSON.stringify(s));
-					//var josnStr = JSON.stringify(s.userInfo);
-					//var jsonObj = s.userInfo;
-					//console.log("获取用户信息成功：" + josnStr);
-//					showData(type, jsonObj);
-					//注销登录
-					//authLogout();
 				}, function(e) {
-					alert("获取用户信息失败：" + e.message + " - " + e.code);
+					plus.nativeUI.closeWaiting();
+					mui.toast("获取用户信息失败：" + e.message + " - " + e.code);
 				});
 			}
 		}
@@ -150,43 +148,23 @@
 				province:province,
 				city:city
 			};
-			console.log('请求数据：'+JSON.stringify(authLoginInfo));
 			apis.authLogin(authLoginInfo,function(res) {
-					console.log(res.status);
-					//res.nickname = res.username;
-					//app.createState(res.data);
-					//plus.nativeUI.closeWaiting();
-					//pop.close();
-					//mui.fire(plus.webview.getLaunchWebview(),"login");
-				}, function(error) {
-					//plus.nativeUI.closeWaiting();
-					//pop.close();
-					//if(error) {
-					//	plus.nativeUI.toast(error.msg);
-						//return;
-				}
-			});
+					res.nickname = res.username;
+					app.createState(res.data);
+					plus.nativeUI.closeWaiting();
+					mui.fire(plus.webview.getLaunchWebview(),"login");
+					mui.toast("登陆成功！");
+					authLogout();
+			}, function(error) {
+					mui.toast("登陆失败！");
+					plus.nativeUI.closeWaiting();
+					authLogout();
+				});
 		}
-		// 显示用户头像信息
-//		function showData(type, data) {
-//			switch(type) {
-//				case 'weixin':
-//					headImage.src = data.headimgurl;
-//					break;
-//				case 'qq':
-//					headImage.src = data.figureurl_qq_2;
-//					break;
-//				case 'sinaweibo':
-//					headImage.src = data.avatar_large;
-//					break;
-//				default:
-//					break;
-//			}
-//		}
 
 		(function login() {
 
-			var pop = new popover('#login-pop');
+			pop = new popover('#login-pop');
 
 			window.openLogin = function() {
 				pop.open();
