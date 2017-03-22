@@ -15,7 +15,7 @@ var popover = function(opt) {
 
 	var mask = mui.createMask(function() {
 		el.classList.remove('mui-active');
-		plus.webview.currentWebview().hide();
+		!opt.notCancelView && plus.webview.currentWebview().hide();
 	});
 
 	this.open = function() {

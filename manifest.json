@@ -50,6 +50,9 @@
 		"XMLHttpRequest": {},
 		"Zip": {},
 		"Barcode": {},
+		"Payment": {
+			"description": "管理支付插件"
+		},
 		"Maps": {},
 		"Speech": {},
 		"Webview": {},
@@ -70,6 +73,18 @@
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
 			"plugins": {
+				"payment": {
+					"alipay": {
+						"description": "支付宝支付"
+					},
+					"weixin": {
+						"appid": "wx",
+						"description": "微信支付"
+					},
+					"appleiap": {
+						"description": "Apple应用内支付"
+					}
+				},
 				"oauth": {
 					"qq": {
 						"appid": "101383378",
@@ -488,7 +503,9 @@
 				"resources": [
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/base.css",
+					"js/popver.js"
 				],
 				"refer": [],
 				"priority": 0
