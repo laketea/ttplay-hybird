@@ -68,7 +68,7 @@
 	}
 
 	owner.captch = function(data, done, failed) {
-		return post("/Api/App/AuthCode", data, done, failed);
+		return post("/Api/App/AuthCode", encode(data), done, failed);
 	};
 	
 	owner.getSliders = function(done, failed){

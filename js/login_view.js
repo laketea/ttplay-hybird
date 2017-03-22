@@ -123,7 +123,7 @@
 								s.userInfo.nickname,
 								g,
 								s.userInfo.figureurl_qq_2,
-								s.userInfo.country,
+								'',
 								s.userInfo.province,
 								s.userInfo.city
 							);

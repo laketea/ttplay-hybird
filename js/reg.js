@@ -36,8 +36,8 @@
 			var regInfo = {
 				username: usernameBox.value,
 				password: passwordBox.value,
-				cid: 1,
-				ccid: 2,
+				cid: 0,
+				ccid: 0,
 				mobile: 0,
 				authCode: authCodeBox.value
 			};
@@ -85,7 +85,11 @@
 				plus.nativeUI.toast("手机号格式错误");
 				return;
 			}
-			apis.captch(function() {
+			var capdata = {
+				'mobile':mobile,
+				'type':0,
+			};
+			apis.captch(capdata,function(res) {
 				plus.nativeUI.toast("发送成功");
 			}, function(error) {
 				plus.nativeUI.toast(error.msg || '发送失败');
