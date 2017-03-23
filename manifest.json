@@ -78,7 +78,7 @@
 						"description": "支付宝支付"
 					},
 					"weixin": {
-						"appid": "wx",
+						"appid": "wx9ccd002c2937c7f3",
 						"description": "微信支付"
 					},
 					"appleiap": {

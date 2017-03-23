@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<style>
+			#loading-content {}
+			
+			.loading-wrap {
+				height: 40px;
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				margin-top: -20px;
+				left: 0;
+			}
+			
+			.loading-wrap span {
+				position: relative;
+				vertical-align: bottom;
+				bottom: 5px;
+			}
+			
+			.mui-bar {
+				background: #000;
+			}
+			
+			.mui-bar a {
+				color: #fff;
+			}
+			
+			.mui-bar .mui-title {
+				color: #fff;
+			}
+			
+			iframe{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">游戏</h1>
+		</header>
+		<div id="loading-content" class="mui-content">
+			<div class="loading-wrap">
+				<div class="mui-spinner"></div>
+				<span>正在打开游戏，请稍候...</span>
+			</div>
+		</div>
+		<div id="pay-popover" class="mui-popover">
+			<h5 class="mui-content-padded">请选择支付方式</h5>
+			<ul class="mui-table-view mui-table-view-radio">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						wxpay
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">
+						alipay
+					</a>
+				</li>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/popver.js"></script>
+		<script type="text/javascript">
+			var channels = {};
+			
+			var createIframe = function(url) {
+				var wrap = document.querySelector(".mui-content");
+				var iframe = document.createElement('iframe');
+				iframe.onload=function(){
+			        iframe.style.display='block';
+			        document.querySelector(".loading-wrap").style.display ="none";
+			        console.log('iframe loaded')
+			    };
+				iframe.src = url;
+				iframe.id = "game-iframe";
+				iframe.name = "game-iframe";
+				wrap.appendChild(iframe);				
+			}
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var game = self.game;
+				document.querySelector(".mui-title").innerHTML = game.name;
+				
+				var pop = new popover({ el:'#pay-popover', notCancelView: true});
+				
+				createIframe('http://test.letsv.com/Api/Test' || game.url);
+			
+				window.addEventListener('message', function(e) {
+					console.log(11);
+					// 判断是否从子窗口发送过来的数据
+					if(e.source && e.source.parent == window){
+						const data = JSON.stringify(e.data);
+						pop.open();
+					}
+				}, false);
+				
+				document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected',function(e){
+					plus.nativeUI.showWaiting();
+					pop.close();
+					pay(e.detail.el.innerText.trim());
+				});
+
+				// 获取支付通道
+				plus.payment.getChannels(function(_channels) {
+					for(var i=0; i<_channels.length; i++){
+						console.log(_channels[i].id);
+						channels[_channels[i].id] = _channels[i];
+					}
+				}, function(e) {
+					alert("获取支付通道失败：" + e.message);
+				});
+	
+				// TODOS 请修改为真实的后台接口地址
+				var ALIPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total=10';
+				var WXPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=10';
+				// 2. 发起支付请求
+				function pay(id) {
+					// 从服务器请求支付订单
+					var PAYSERVER = '';
+					if(id == 'alipay') {
+						PAYSERVER = ALIPAYSERVER;
+					} else if(id == 'wxpay') {
+						PAYSERVER = WXPAYSERVER;
+					} else {
+						plus.nativeUI.alert("不支持此支付通道！", null, "捐赠");
+						plus.nativeUI.closeWaiting();
+						return;
+					}
+					var xhr = new XMLHttpRequest();
+					xhr.onreadystatechange = function() {
+						switch(xhr.readyState) {
+							case 4:
+								if(xhr.status == 200) {
+									plus.payment.request(channels[id], xhr.responseText, function(result) {
+										plus.nativeUI.alert("支付成功！", function() {
+											plus.nativeUI.closeWaiting();
+										});
+									}, function(error) {
+										plus.nativeUI.alert("支付失败：" + error.code);
+										plus.nativeUI.closeWaiting();
+									});
+								} else {
+									alert("获取订单信息失败！");
+									plus.nativeUI.closeWaiting();
+								}
+								break;
+							default:
+								break;
+						}
+					}
+					xhr.open('GET', PAYSERVER);
+					xhr.send();
+				}
+			});
+		</script>
+	</body>
+
+</html>

@@ -8,7 +8,7 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/base.css" rel="stylesheet" />
 		<style>
-			#loading-content {}
+						#loading-content {}
 			
 			.loading-wrap {
 				height: 40px;
@@ -37,11 +37,119 @@
 			.mui-bar .mui-title {
 				color: #fff;
 			}
-			
 			iframe{
 				width: 100%;
 				height: 100%;
 			}
+			.pay-way {
+				text-align: center;
+			}
+			.cell-header {
+				background-color: #f5f5f5;
+				border-radius: 0 !important ;
+				border-bottom: 1px solid #ccc;
+			}
+			.cell-header>h5 {
+				color: #333;
+				text-align:  center;
+				line-height: 34px;
+				font-weight: bold;
+			}
+			.cell-header>h6 {
+				color: #333;
+				text-align:  center;
+				line-height: 30px;
+				font-weight: bold;		
+				line-height: 30px;
+				font-size: 24px;		
+			}
+			.cell-con {
+				width: 90%;
+				margin: 0 auto;
+				border-bottom: 1px solid #ccc;
+				font-size: 16px;
+				height: 60px;
+				line-height: 60px;
+				overflow: hidden;
+			}
+			.mui-table-view>li:nth-child(3) {
+				border-bottom: none;
+			}
+			.icon-icon {
+				width: 26px;
+				height: 26px;
+				display: block;
+				float:left;
+				margin-top: 17px;
+			}
+			.wei-icon {
+				background: url('./images/weixin.png');
+				background-size: 26px 26px;
+			}
+			.zhifu-icon{
+				background: url('./images/zhifubao.png');
+				background-size: 26px 26px;
+			}
+			.icon-selecteds {
+				width: 18px;
+				height: 18px;
+				display:  block;
+				float: right;
+				margin: 21px 2px 0 0;
+			}
+			.icon-info {
+				display: block;
+				float: left;
+				margin-left: 10px;
+			}
+			.selecteds-active {
+				background: url('./images/selected-icon.png');
+				background-size: 18px 18px;
+			}
+			.cell-button {
+				border-top: 1px solid #ccc;
+			}
+			.cell-button>button {
+				width: 82%;
+				background: #00c901;
+				color: #fff;
+				font-size: 18px;
+				text-align:  center;
+				display: block;
+				margin: 20px auto;
+				border: none;
+				outline: none;;
+			}
+			button:enabled:active {
+				background: #00c901;
+			}
+/*			.cell-bot {
+				width: 96%;
+				margin: 0 auto;
+				overflow: hidden;
+				font-size: 14px;
+				line-height: 18px;
+				margin-bottom: 10px;
+			}
+			.cell-left {
+				float: left;
+			}
+			.cell-right {
+				float: right;
+				overflow: hidden;
+			}
+			.cell-right>span:nth-child(1) {
+				width: 14px;
+				height: 14px;
+				display: inline-block;
+				vertical-align: top;
+				margin: 2px 2px 0 0;
+				background: url('./images/selected-icon.png');
+				background-size: 14px 14px;
+			}
+			.cell-right>span:nth-child(3){
+				color: #3997ee;
+			}*/
 		</style>
 	</head>
 
@@ -57,9 +165,13 @@
 			</div>
 		</div>
 		<div id="pay-popover" class="mui-popover">
-			<h5 class="mui-content-padded">请选择支付方式</h5>
+			<h5 class="mui-content-padded pay-way">请选择支付方式</h5>
 			<ul class="mui-table-view mui-table-view-radio">
-				<li class="mui-table-view-cell">
+				<li class="cell-header">
+					<h5><span id="game-money">就爱天天玩--游戏充值</span></h5>
+					<h6 id="real-money">￥2.00</h6>
+				</li>
+<!--				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
 						wxpay
 					</a>
@@ -68,10 +180,24 @@
 					<a class="mui-navigate-right">
 						alipay
 					</a>
+				</li>-->
+				<li class="cell-con">
+					<span class="wei-icon icon-icon"></span ><span class="icon-info">微信支付</span><span class="icon-selecteds selecteds-active" data-val="1"></span>
 				</li>
+				<li class="cell-con">
+					<span class="zhifu-icon icon-icon"></span ><span class="icon-info">支付宝支付</span><span class="icon-selecteds" data-val="2"/></span>
+				</li>
+				<li class="cell-button">
+					<button id="to-pay">立即支付</button>
+				</li>
+<!--				<li class="cell-bot">
+					<div class="cell-left" ><span>UID:</span><span id="pay-id">123321123</span></div>
+					<div class="cell-right"><span></span><span>同意&nbsp;</span><span>天天玩玩家条例</span></div>
+				</li>-->
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/popver.js"></script>
+		<script src="js/zepto.js"></script>
 		<script type="text/javascript">
 			var channels = {};
 			
@@ -91,16 +217,25 @@
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
 				var game = self.game;
+				var order = null;
 				document.querySelector(".mui-title").innerHTML = game.name;
 				
 				var pop = new popover({ el:'#pay-popover', notCancelView: true});
 				
 				createIframe('http://test.letsv.com/Api/Test' || game.url);
-			
+
 				window.addEventListener('message', function(e) {
 					// 判断是否从子窗口发送过来的数据
 					if(e.source && e.source.parent == window){
-						const data = JSON.stringify(e.data);
+					    order = JSON.parse(e.data);
+					    //TODO 更新弹出层中的文案及数据
+					    if(order.price<= 0 ) {
+					    		mui.alert("充值金额有误！");
+					    		return;
+					    }
+					    var _price = parseFloat(parseInt(order.price) / 100).toFixed(2);
+					    //console.log(_price);
+					    $("#real-money").text("￥"+_price);
 						pop.open();
 					}
 				}, false);
@@ -120,23 +255,41 @@
 				}, function(e) {
 					alert("获取支付通道失败：" + e.message);
 				});
-	
-				// TODOS 请修改为真实的后台接口地址
-				var ALIPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total=10';
-				var WXPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=10';
-				// 2. 发起支付请求
-				function pay(id) {
-					// 从服务器请求支付订单
-					var PAYSERVER = '';
-					if(id == 'alipay') {
-						PAYSERVER = ALIPAYSERVER;
-					} else if(id == 'wxpay') {
-						PAYSERVER = WXPAYSERVER;
-					} else {
-						plus.nativeUI.alert("不支持此支付通道！", null, "捐赠");
-						plus.nativeUI.closeWaiting();
-						return;
+				//选择支付方式 默认微信
+				$('.cell-con').on('tap',  function(){
+					$('.icon-selecteds').removeClass('selecteds-active');
+					$(this).find('.icon-selecteds').addClass('selecteds-active');
+				})
+				//支付按钮
+				$('#to-pay').on('tap', function(){
+					var state = $('.selecteds-active').attr('data-val');
+					//console.log(order);
+					var url = 'http://test.letsv.com/Api/App/';
+					var params = '/?mid='+order.mid+'&gid='+order.gid+'&sid='+order.sid+'&cid='+order.cid+'&oid='+order.oid+'&money='+order.price+'&subject='+order.subject+'&ext='+order.ext;
+					var _id = null;
+					switch(state) {
+						case '1': //微信支付
+							//组装参数
+							url = url + 'wxpay' + params;
+							_id = 'wxpay';
+						break;
+						case '2': //支付宝支付
+							url = url + 'alipay' + params;
+							_id = 'alipay';
+						break;
+						default:
+							plus.nativeUI.alert("不支持此支付通道！", null, "");
+							plus.nativeUI.closeWaiting();
+							return;
+						break;
 					}
+					console.log(url);
+					pay(_id,url);
+					//mui.alert(state);
+					//alert(state);
+				})
+				//发起支付请求
+				function pay(id,url) {
 					var xhr = new XMLHttpRequest();
 					xhr.onreadystatechange = function() {
 						switch(xhr.readyState) {
@@ -159,7 +312,7 @@
 								break;
 						}
 					}
-					xhr.open('GET', PAYSERVER);
+					xhr.open('GET', url);
 					xhr.send();
 				}
 			});
