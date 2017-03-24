@@ -123,33 +123,6 @@
 			button:enabled:active {
 				background: #00c901;
 			}
-/*			.cell-bot {
-				width: 96%;
-				margin: 0 auto;
-				overflow: hidden;
-				font-size: 14px;
-				line-height: 18px;
-				margin-bottom: 10px;
-			}
-			.cell-left {
-				float: left;
-			}
-			.cell-right {
-				float: right;
-				overflow: hidden;
-			}
-			.cell-right>span:nth-child(1) {
-				width: 14px;
-				height: 14px;
-				display: inline-block;
-				vertical-align: top;
-				margin: 2px 2px 0 0;
-				background: url('./images/selected-icon.png');
-				background-size: 14px 14px;
-			}
-			.cell-right>span:nth-child(3){
-				color: #3997ee;
-			}*/
 		</style>
 	</head>
 
@@ -171,16 +144,6 @@
 					<h5><span id="game-money">就爱天天玩--游戏充值</span></h5>
 					<h6 id="real-money">￥2.00</h6>
 				</li>
-<!--				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						wxpay
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-selected">
-					<a class="mui-navigate-right">
-						alipay
-					</a>
-				</li>-->
 				<li class="cell-con">
 					<span class="wei-icon icon-icon"></span ><span class="icon-info">微信支付</span><span class="icon-selecteds selecteds-active" data-val="1"></span>
 				</li>
@@ -190,10 +153,6 @@
 				<li class="cell-button">
 					<button id="to-pay">立即支付</button>
 				</li>
-<!--				<li class="cell-bot">
-					<div class="cell-left" ><span>UID:</span><span id="pay-id">123321123</span></div>
-					<div class="cell-right"><span></span><span>同意&nbsp;</span><span>天天玩玩家条例</span></div>
-				</li>-->
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/popver.js"></script>
@@ -252,6 +211,7 @@
 						console.log(_channels[i].id);
 						channels[_channels[i].id] = _channels[i];
 					}
+					console.log(JSON.stringify(channels));
 				}, function(e) {
 					alert("获取支付通道失败：" + e.message);
 				});
@@ -301,6 +261,7 @@
 										});
 									}, function(error) {
 										plus.nativeUI.alert("支付失败：" + error.code);
+										console.log(JSON.stringify(error));
 										plus.nativeUI.closeWaiting();
 									});
 								} else {
