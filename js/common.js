@@ -173,8 +173,8 @@ function renderGiftItem(item) {
 			pid: item.id,
 			doletime: Date.now()
 		}, function(res) {
-			mui.prompt("请点击输入框复制礼包码每个帐号只能领取一次", res.number, "详情", ['', '复制'], function() {
-				copyToClipAndroid(res.number);
+			mui.prompt("请点击输入框复制礼包码每个帐号只能领取一次", res.number, "详情", ['取消', '复制'], function() {
+				mui.os.android?copyToClipAndroid(res.number):copyToClipIos(res.number);
 			}, 'div');
 
 			document.querySelector('.mui-popup-input input').value = res.number;
@@ -187,13 +187,16 @@ function renderGiftItem(item) {
 		var main = plus.android.runtimeMainActivity();
 		var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
 		plus.android.invoke(clip, "setText", text);
+		mui.toast('复制成功！');
 	}
 
 	function copyToClipIos(text) {
 		var UIPasteboard = plus.ios.importClass("UIPasteboard");
 		var generalPasteboard = UIPasteboard.generalPasteboard();
-		// 设置文本内容:
-		generalPasteboard.setValueforPasteboardType("testValue", text);
+		// 设置/获取文本内容:
+		generalPasteboard.setValueforPasteboardType(text, "public.utf8-plain-text");
+		mui.toast('复制成功！');
+		//var value = generalPasteboard.valueForPasteboardType("public.utf8-plain-text");
 	}
 
 	return $item;
@@ -239,8 +242,8 @@ function renderGameGiftItem(item) {
 			pid: item.id,
 			doletime: Date.now()
 		}, function(res) {
-			mui.prompt("请点击输入框复制礼包码每个帐号只能领取一次", res.number, "详情", ['', '复制'], function() {
-				copyToClipAndroid(res.number);
+			mui.prompt("请点击输入框复制礼包码每个帐号只能领取一次", res.number, "详情", ['取消', '复制'], function() {
+				mui.os.android?copyToClipAndroid(res.number):copyToClipIos(res.number);
 			}, 'div');
 			document.querySelector('.mui-popup-input input').value = res.number;
 		});
@@ -251,13 +254,16 @@ function renderGameGiftItem(item) {
 		var main = plus.android.runtimeMainActivity();
 		var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
 		plus.android.invoke(clip, "setText", text);
+		mui.toast('复制成功！');
 	}
 
 	function copyToClipIos(text) {
 		var UIPasteboard = plus.ios.importClass("UIPasteboard");
 		var generalPasteboard = UIPasteboard.generalPasteboard();
-		// 设置文本内容:
-		generalPasteboard.setValueforPasteboardType("testValue", text);
+		// 设置/获取文本内容:
+		generalPasteboard.setValueforPasteboardType(text, "public.utf8-plain-text");
+		mui.toast('复制成功！');
+		//var value = generalPasteboard.valueForPasteboardType("public.utf8-plain-text");
 	}
 
 	return $item;

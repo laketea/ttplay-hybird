@@ -364,7 +364,8 @@
 					"images/photoBg.jpg",
 					"game_sub.html",
 					"images/btnCollect.png",
-					"login_view.html"
+					"login_view.html",
+					"images/default-user.png"
 				],
 				"refer": [
 					"play.html"

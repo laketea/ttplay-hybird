@@ -42,7 +42,8 @@
 			"images/gift.png",
 			"js/popver.js",
 			"images/contact.png",
-			"images/gift-active.png"
+			"images/gift-active.png",
+			"images/contact-active.png"
 		],
 		"refer": [
 			"index.html",
@@ -55,7 +56,8 @@
 	"gift.html": {
 		"resources": [
 			"gift_sub.html",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"gift_sub.html"
@@ -109,7 +111,10 @@
 			"js/reg.js",
 			"js/md5.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/popver.js",
+			"js/app.js",
+			"js/mui.min.js"
 		]
 	},
 	"play.html": {
@@ -129,7 +134,17 @@
 			"fonts/mui.ttf",
 			"js/game.js",
 			"css/mui.min.css",
-			"login_view.html"
+			"login_view.html",
+			"css/base.css",
+			"js/app.js",
+			"js/zepto.js",
+			"css/index.css",
+			"js/common.js",
+			"js/apis.js",
+			"js/mui.min.js",
+			"images/default-user.png",
+			"images/btnCollect.png",
+			"js/md5.js"
 		],
 		"refer": [
 			"login_view.html"
