@@ -430,7 +430,8 @@
 					"js/md5.js",
 					"images/btnCollect.png",
 					"js/popver.js",
-					null
+					null,
+					"images/default-user.png"
 				],
 				"refer": [
 					"game.html",
@@ -454,7 +455,8 @@
 					"css/mui.min.css",
 					"js/zepto.js",
 					"js/md5.js",
-					"images/btnCollect.png"
+					"images/btnCollect.png",
+					"images/default-user.png"
 				],
 				"refer": [
 					"game.html"
@@ -474,7 +476,8 @@
 					"css/mui.min.css",
 					"js/zepto.js",
 					"js/md5.js",
-					"js/popver.js"
+					"js/popver.js",
+					"images/default-user.png"
 				],
 				"refer": [
 					"game.html",
@@ -505,7 +508,11 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/base.css",
-					"js/popver.js"
+					"js/popver.js",
+					"images/weixin.png",
+					"js/zepto.js",
+					"images/zhifubao.png",
+					"images/selected-icon.png"
 				],
 				"refer": [],
 				"priority": 0

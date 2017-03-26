@@ -243,6 +243,37 @@
 							return;
 						break;
 					}
+					//判断是否安装微信没有安装直接返回
+					if( state == 1){
+						if(mui.os.iphone){
+						    var WXApi = plus.ios.import("WXApi");
+							var isWXInstalled = WXApi.isWXAppInstalled()
+							if( !isWXInstalled ){
+								mui.toast('请先安装微信在进行支付！');
+								return ;
+							}
+						}else if(mui.os.android){
+							function isInstalled(pn){
+							    var main = plus.android.runtimeMainActivity();
+							    var pm = main.getPackageManager();
+							    var PackageManager = plus.android.importClass(pm);
+							    try{
+							        var pi = pm.getPackageInfo(pn,PackageManager.GET_ACTIVITIES);
+							        if(pi){
+							            return true;
+							        }
+							    }catch(e){
+							    }
+							    return false;
+							}
+							if(!isInstalled('com.tencent.mm') ){
+								mui.toast('请先安装微信在进行支付！');
+								return ;
+							}
+						}else{
+							return ;
+						}						
+					}					
 					console.log(url);
 					pay(_id,url);
 					//mui.alert(state);

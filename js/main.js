@@ -85,7 +85,7 @@
 
 		var targetTab = this.getAttribute('href');
 		
-		plus.webview.hide("game");
+		plus.webview.close("game.html");
 
 		if(targetTab == 'community.html') {
 			mui.alert("板块正在建设中...");

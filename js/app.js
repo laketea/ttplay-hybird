@@ -12,7 +12,7 @@
 	};
 	
 	owner.clearState = function(){
-		owner.setState({nickname: '游客'});
+		owner.setState({nickname: '游客',avatar:'./images/default-user.png'});
 	};
 
 	/**
@@ -42,8 +42,9 @@
 	 * 获取当前状态
 	 **/
 	owner.getState = function() {
-		var stateText = JSON.parse(localStorage.getItem('$state') || '{"nickname": "游客"}');
+		var stateText = JSON.parse(localStorage.getItem('$state') || '{"nickname": "游客","avatar":"./images/default-user.png"}');
 		stateText.nickname = stateText.nickname || stateText.account;
+		stateText.avatar = stateText.avatar || './images/default-user.png';
 		return stateText;
 	};
 
