@@ -432,7 +432,10 @@
 					"images/btnCollect.png",
 					"js/popver.js",
 					null,
-					"images/default-user.png"
+					"images/default-user.png",
+					"images/photoBg.jpg",
+					"fonts/mui.ttf",
+					"images/qrcode.jpg"
 				],
 				"refer": [
 					"game.html",
@@ -457,7 +460,10 @@
 					"js/zepto.js",
 					"js/md5.js",
 					"images/btnCollect.png",
-					"images/default-user.png"
+					"images/default-user.png",
+					"images/photoBg.jpg",
+					"fonts/mui.ttf",
+					"images/qrcode.jpg"
 				],
 				"refer": [
 					"game.html"
@@ -478,7 +484,8 @@
 					"js/zepto.js",
 					"js/md5.js",
 					"js/popver.js",
-					"images/default-user.png"
+					"images/default-user.png",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"game.html",

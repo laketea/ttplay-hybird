@@ -8,7 +8,7 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/base.css" rel="stylesheet" />
 		<style>
-						#loading-content {}
+			#loading-content {}
 			
 			.loading-wrap {
 				height: 40px;
@@ -170,6 +170,8 @@
 			    };
 				iframe.src = url;
 				iframe.id = "game-iframe";
+				iframe.setAttribute('scrolling','no');
+				iframe.setAttribute('rameborder','0');
 				iframe.name = "game-iframe";
 				wrap.appendChild(iframe);				
 			}

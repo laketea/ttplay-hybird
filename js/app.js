@@ -122,6 +122,7 @@
 			}
 		}
 	}
+
 }(mui, window));
 
 function hasClass(ele,cls) {

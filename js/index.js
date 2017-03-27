@@ -210,7 +210,15 @@
 			firstLoad = true;
 			pulldownRefresh();
 		});
-
+		//显示二维码
+		$('#openPopover').on('tap', function(){
+			var mask = mui.createMask( hideQrcode );
+			mask.show();
+			$('#my-qrcode').show();
+		})
+		function hideQrcode(){
+			$('#my-qrcode').hide();
+		}
 		//资讯
 		doc.querySelector(".tab-last-infor").addEventListener('tap', function() {
 			mui.alert("正在建设中...");

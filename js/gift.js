@@ -139,7 +139,15 @@
 			firstLoad = true;
 			pulldownRefresh();
 		});
-
+		//二维码
+		$('#openPopover').on('tap', function(){
+			var mask = mui.createMask( hideQrcode );
+			mask.show();
+			$('#my-qrcode').show();
+		})
+		function hideQrcode(){
+			$('#my-qrcode').hide();
+		}
 		pulldownRefresh();
 	});
 

@@ -37,6 +37,7 @@
 }
 
 .collectButton {
+	display: block;
 	width: .64rem;
 	height: .64rem;
 	position: absolute;
@@ -44,9 +45,11 @@
 	bottom: .213rem;
 	text-align: center;
 	text-decoration: none;
+	z-index: 99;
 }
 
 .collectButton img {
+	display: block;
 	width: 100%;
 	height: 100%;
 }

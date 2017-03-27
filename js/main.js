@@ -88,8 +88,15 @@
 		plus.webview.close("game.html");
 
 		if(targetTab == 'community.html') {
-			mui.alert("板块正在建设中...");
-		
+			//mui.alert("板块正在建设中...");
+			mui.openWindow({
+				url: 'community.html',
+				id: 'community',
+				createNew: true,
+				waiting: {
+					autoShow: true
+				}
+			});
 			return;
 		}
 		if(targetTab == 'user.html' && !app.isLogged()){

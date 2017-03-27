@@ -10,7 +10,17 @@
 			"css/mui.min.css",
 			"js/index.js",
 			"images/btnCollect.png",
-			"images/default-user.png"
+			"images/default-user.png",
+			"images/photoBg.jpg",
+			"js/mui.min.js",
+			"js/app.js",
+			"js/zepto.js",
+			"js/common.js",
+			"js/apis.js",
+			"js/popver.js",
+			"js/md5.js",
+			"fonts/mui.ttf",
+			"images/qrcode.jpg"
 		],
 		"refer": [
 			"play.html",
@@ -21,7 +31,8 @@
 		"resources": [
 			"index_sub.html",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/mui.min.js"
 		],
 		"refer": [
 			"index_sub.html"
@@ -57,7 +68,8 @@
 		"resources": [
 			"gift_sub.html",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/mui.min.js"
 		],
 		"refer": [
 			"gift_sub.html"
@@ -81,7 +93,16 @@
 			"css/base.css",
 			"css/mui.min.css",
 			"images/default-user.png",
-			"images/btnCollect.png"
+			"images/btnCollect.png",
+			"js/mui.min.js",
+			"images/photoBg.jpg",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/zepto.js",
+			"js/common.js",
+			"js/apis.js",
+			"images/qrcode.jpg",
+			"js/md5.js"
 		],
 		"refer": [
 			"game.html"
@@ -94,7 +115,19 @@
 			"images/default-user.png",
 			"css/index.css",
 			"css/base.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/app.js",
+			"js/zepto.js",
+			"js/common.js",
+			"js/apis.js",
+			"js/mui.min.js",
+			"js/popver.js",
+			"js/md5.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"game.html",
+			"play.html"
 		]
 	},
 	"login_view.html": {
@@ -144,10 +177,18 @@
 			"js/mui.min.js",
 			"images/default-user.png",
 			"images/btnCollect.png",
-			"js/md5.js"
+			"js/md5.js",
+			"images/photoBg.jpg"
 		],
 		"refer": [
 			"login_view.html"
+		]
+	},
+	"community.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

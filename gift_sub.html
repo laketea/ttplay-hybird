@@ -40,7 +40,7 @@
 					<div class="userName">
 						<p class="vip-name"></p>
 					</div>
-					<a onclick="onCollectClick()" class="collectButton"><img src="./images/btnCollect.png"></a>
+					<a id="openPopover" class="collectButton"><img src="./images/btnCollect.png"></a>
 				</div>
 				<ul class="nav user-tab-bar">
 					<li class="user-tab gift-tab tab-last-gift active" data-type="GIFT"><span class="clickTab"><i class="gift"></i><p>礼包列表</p></span></li>
@@ -58,6 +58,10 @@
 					<!--gameListRegion end-->
 				</div>
 			</div>
+		</div>
+		<div class="popovers" id="my-qrcode">
+			<h5>长按二维码关注公众号</h5>
+			<img src="./images/qrcode.jpg" alt="" />
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/md5.js"></script>

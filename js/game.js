@@ -70,6 +70,16 @@
 			playGame(game);
 		});
 		reload(game);
+			//显示二维码
+		$('#showqrcode').on('tap', function(){
+			var mask = mui.createMask( hideQrcode );
+			mask.show();
+			$('#my-qrcode').show();
+		})
+
+		function hideQrcode(){
+			$('#my-qrcode').hide();
+		}
 	});
 
 	function loadGames(ready, isAppend ,isReload) {
