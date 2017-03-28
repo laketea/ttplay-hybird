@@ -1,5 +1,5 @@
 (function($, owner) {
-	var apiHost = "http://test.letsv.com/",
+	var apiHost = "http://api.91quyou.cn/",
 		sign = "9CLm76**$L&a&Tsjb6Ivc#vdnDcoSH3C";
 
 	owner.login = function(data, done, failed) {
@@ -14,7 +14,7 @@
 	};
 	
 	owner.authLogin = function(data, done, failed) {
-		return post("/Api/App/authLogin", encode(data), done, function(error){
+		return post("/App/authLogin", encode(data), done, function(error){
 			if(error.status == 0) {
 				console.log('第三方注册失败');
 			}
@@ -23,7 +23,7 @@
 	}
 
 	owner.reg = function(data, done, failed) {
-		return post("/Api/App/register", encode(data), done, function(error) {
+		return post("/App/register", encode(data), done, function(error) {
 			if(error.status == 0) {
 				error.msg = "注册失败";
 			} else if(error.status == 2) {
@@ -34,49 +34,49 @@
 	};
 
 	owner.getPlayedGames = function(data, done, failed) {
-		return post("/Api/App/historyGames", encode(data), done, failed)
+		return post("/App/historyGames", encode(data), done, failed)
 	}
 
 	owner.getGames = function(data, done, failed) {
-		return post("/Api/App/getGames", encode(data), done, failed);
+		return post("/App/getGames", encode(data), done, failed);
 	}
 	
 	owner.getNews = function(data, done, failed) {
-		return post("/Api/App/newsList", encode(data), done, failed);
+		return post("/App/newsList", encode(data), done, failed);
 	}
 
 	owner.getGameDetail = function(gid, done, failed) {
-		return post("/Api/App/getGame", encode({
+		return post("/App/getGame", encode({
 			gid: gid
 		}), done, failed);
 	}
 	
-	owner.getNews = function(done,failed){
+/*	owner.getNews = function(done,failed){
 		return get("/Api/App/getNews",encode({}),done,failed)
 	}
-	
+	*/
 	owner.playGame = function(data,done,failed){
-		return post("/Api/App/loginGame",encode(data),done,failed);
+		return post("/App/loginGame",encode(data),done,failed);
 	}
 	
 	owner.getGifts = function(data,done,failed){
-		return post("/Api/App/gift",encode(data),done,failed);
+		return post("/App/gift",encode(data),done,failed);
 	}
 	
 	owner.presentGift = function(data,done,failed){
-		return post("/Api/App/getGift",encode(data),done,failed);
+		return post("/App/getGift",encode(data),done,failed);
 	}
 	
 	owner.getGameGifts = function(data,done,failed){
-		return get("/Api/App/gameGift",encode(data),done,failed);
+		return get("/App/gameGift",encode(data),done,failed);
 	}
 
 	owner.captch = function(data, done, failed) {
-		return post("/Api/App/AuthCode", encode(data), done, failed);
+		return post("/App/AuthCode", encode(data), done, failed);
 	};
 	
 	owner.getSliders = function(done, failed){
-		return get("/Api/App/slide", {}, done, failed);
+		return get("/App/slide", {}, done, failed);
 	}
 	
 	function encode(data){

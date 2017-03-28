@@ -70,6 +70,20 @@ function renderGameItem(item, recently, isMyGames) {
 	});
 	return $item;
 }
+function renderNewsItem(item) { 
+	var html = [];
+	for(var i in item){
+		html.push(i+'_');
+	}
+	alert(html.join('') );
+/*	html.push('<div class="media game-list-item">');
+	html.push('<div class="media-left media-middle" data-gameid="' + item.id + '" style="position:relative;">');
+	html.push('<img style="border-radius:15px;" class="media-object game-icon" src="http://www.letsv.com/Uploads/Game/' + item.icon + '" />')
+	html.push('</div>');
+	var $item = $( html.join("") );
+	return $item;*/
+}
+
 //渲染游戏列表
 function renderGameList($parent, lists, isAppend, recently, isMyGames) {
 	if(!isAppend) {
@@ -81,9 +95,13 @@ function renderGameList($parent, lists, isAppend, recently, isMyGames) {
 }
 
 //渲染新闻列表
-function renderNewsList($parent, lists) {
-	$parent.empty();
-	//
+function renderNewsList($parent, lists, isAppend) {
+	if(!isAppend) {
+		$parent.empty();
+	}
+	mui.each(lists, function(index, item) {
+		$parent.append(renderNewsItem(item));
+	});
 }
 
 function renderLastGameItem(item) {

@@ -163,20 +163,34 @@
 		type = type || 'HOT';
 		var recently = type == 'OPENING';
 //		firstLoad && plus.nativeUI.showWaiting();
-		apis.getGames({
-			type: type,
-			page: pageCache[type]+1
-		}, function(res) {
-			renderGameList($(".games-list-content"), res.lists, options.isAppend, recently);
-			maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
-			pageCache[type] = parseInt(res.page);
-			var isLastPage = pageCache[type] >= maxPageCache[type];
-//			firstLoad && plus.nativeUI.closeWaiting();
-			options.checkReady(isLastPage);
-		}, function() {
-//			firstLoad && plus.nativeUI.closeWaiting();
-			options.checkReady();
-		});
+		//资讯的页面
+		if( type == 'INFOR'){
+			apis.getNews({
+			/*	type:type,
+				page:pageCache[type]+1*/
+			},function(res){
+				alert(1)
+			},function(e){
+				alert(2)
+				options.checkReady();
+			});
+		}else{
+			apis.getGames({
+				type: type,
+				page: pageCache[type]+1
+			}, function(res) {
+				renderGameList($(".games-list-content"), res.lists, options.isAppend, recently);
+				maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
+				pageCache[type] = parseInt(res.page);
+				var isLastPage = pageCache[type] >= maxPageCache[type];
+	//			firstLoad && plus.nativeUI.closeWaiting();
+				options.checkReady(isLastPage);
+			}, function() {
+	//			firstLoad && plus.nativeUI.closeWaiting();
+				options.checkReady();
+			});			
+		}
+
 	}
 	
 	function renderHeader(){
@@ -202,7 +216,8 @@
 			gameListTitle.innerHTML = {
 				'HOT': '热门推荐',
 				'PUTAWAY': '最新上架',
-				'OPENING': '最新开服'
+				'OPENING': '最新开服',
+				'INFOR':'最新资讯'
 			}[type];
 			removeClass(doc.querySelector('.active'), 'active');
 			addClass(this, 'active');
@@ -220,9 +235,9 @@
 			$('#my-qrcode').hide();
 		}
 		//资讯
-		doc.querySelector(".tab-last-infor").addEventListener('tap', function() {
+/*		doc.querySelector(".tab-last-infor").addEventListener('tap', function() {
 			mui.alert("正在建设中...");
-		});
+		});*/
 	});
 
 }(mui, document, $));
