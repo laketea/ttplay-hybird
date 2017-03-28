@@ -17,11 +17,10 @@
 		    <h1 class="mui-title">天天玩社区</h1>
 		</header>
 		<div class="mui-content">
-			<div class="mui-iframe-wrapper">
-				<iframe id="iframepage" width='100%' height='100%' frameborder="0"  marginheig ht="0" marginwidth="0"></iframe>
-			</div>
+			<iframe id="iframepage" frameborder="0" width="100%" height="100%" style="overflow:hidden;overflow-y:auto;"></iframe>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/zepto.js"></script>
 		<script type="text/javascript">
 /*			mui.init({
 				subpages: [{
@@ -34,10 +33,21 @@
 				}]
 			});*/
 			mui.plusReady(function() {
-				var iframe = document.getElementById('iframepage');
-
+				var myiframe = document.getElementById('iframepage');
 				var url = 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166';
-				iframe.src = url;
+				myiframe.src = url;
+				var oW = screen.availWidth;
+				var oH = screen.availHeight;
+				var headerH = $('header').height();
+				if( mui.os.ios ){
+					myiframe.onload = function(){
+						$(this).contents().find('body').width(oW);
+						$(this).contents().find('body').height(oH-headerH);
+					}				
+				}else{
+					$(myiframe).height(oH-headerH);
+				}
+
 			})
 		</script>
 	</body>
