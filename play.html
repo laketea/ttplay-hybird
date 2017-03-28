@@ -182,8 +182,7 @@
 				document.querySelector(".mui-title").innerHTML = game.name;
 				
 				var pop = new popover({ el:'#pay-popover', notCancelView: true});
-				
-				createIframe('http://test.letsv.com/Api/Test' || game.url);
+				createIframe(game.url);
 
 				window.addEventListener('message', function(e) {
 					// 判断是否从子窗口发送过来的数据

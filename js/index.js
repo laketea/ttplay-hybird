@@ -125,7 +125,7 @@
 				var item = doc.createElement("div");
 				var link = doc.createElement("a");
 				var image = new Image();
-				image.src = 'http://www.letsv.com/' + game.thumb;
+				image.src = 'http://www.91quyou.cn/' + game.thumb;
 				item.setAttribute("class", "mui-slider-item  " + (isDuplicate ? 'mui-slider-item-duplicate' : ''));
 				muiSliderGroupBox.appendChild(item);
 				item.appendChild(link);

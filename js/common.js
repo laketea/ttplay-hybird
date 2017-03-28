@@ -1,4 +1,4 @@
-var iconHost = "http://www.letsv.com/Uploads/Game/";
+var iconHost = "http://www.91quyou.cn/Uploads/Game/";
 
 function renderGameItem(item, recently, isMyGames) {
 	var html = [],
@@ -7,7 +7,7 @@ function renderGameItem(item, recently, isMyGames) {
 	item.tags = item.tags || '';
 	html.push('<div class="media game-list-item">');
 	html.push('<div class="media-left media-middle" data-gameid="' + item.id + '" style="position:relative;">');
-	html.push('<img style="border-radius:15px;" class="media-object game-icon" src="http://www.letsv.com/Uploads/Game/' + item.icon + '" />')
+	html.push('<img style="border-radius:15px;" class="media-object game-icon" src="http://www.91quyou.cn/Uploads/Game/' + item.icon + '" />')
 	html.push('</div>');
 	html.push('<div class="media-body" data-gameid="' + item.icon + '">');
 	if(recently) {
@@ -352,6 +352,7 @@ function playGame(item) {
 		gid: item.gid || item.id,
 		mid: window.app.getState().id
 	}, function(res) {
+		console.log(JSON.stringify(res));
 		plus.nativeUI.closeWaiting();
 		mui.openWindow({
 			url: 'play.html',
