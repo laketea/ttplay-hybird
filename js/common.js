@@ -71,17 +71,12 @@ function renderGameItem(item, recently, isMyGames) {
 	return $item;
 }
 function renderNewsItem(item) { 
-	var html = [];
-	for(var i in item){
-		html.push(i+'_');
-	}
-	alert(html.join('') );
-/*	html.push('<div class="media game-list-item">');
-	html.push('<div class="media-left media-middle" data-gameid="' + item.id + '" style="position:relative;">');
-	html.push('<img style="border-radius:15px;" class="media-object game-icon" src="http://www.letsv.com/Uploads/Game/' + item.icon + '" />')
-	html.push('</div>');
-	var $item = $( html.join("") );
-	return $item;*/
+	var html = '<li class="news-li" data-url='+item.url+'>'+
+						'<span class="game-loads">'+item.type+'</span>'+
+        				'<span class="game-title">'+item.title+'</span>'+
+        				'<span class="game-loads">'+getDateTime(item.intime*1000).date+'</span>'+
+    				'</li>'
+	return $( html);
 }
 
 //渲染游戏列表

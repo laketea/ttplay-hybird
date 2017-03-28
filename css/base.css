@@ -332,3 +332,46 @@ ul {
     z-index: 998;
     background-color: rgba(0,0,0,.3);
 }
+.news-li {
+	list-style: none;
+	height: 40px !important;
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc ;
+	margin-bottom: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.news-li>span {
+	display: block;
+}
+.news-li>span:nth-child(1) {
+	float: left;
+	background:#35d666;
+	color: #fff;
+	border-radius: 4px;
+	padding: 4px;
+}
+
+.news-li>span:nth-child(2) {
+	float: left;
+	margin-left: 10px;
+	line-height: 40px;
+	color: #232323;
+	max-width: 60%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.news-li>span:nth-child(3) {
+	float: right ;
+	line-height: 40px;
+	margin-right: 20px;
+}
+.game-loads {
+	font-size: .3rem;
+	color: #a1a1a1;
+	margin-top: 0;
+	margin-bottom: .1rem
+}

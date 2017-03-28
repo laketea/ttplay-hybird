@@ -13,7 +13,8 @@
 	var pageCache = {
 		'HOT': 0,
 		'PUTAWAY': 0,
-		'OPENING': 0
+		'OPENING': 0,
+		'INFOR':0
 	};
 
 	var maxPageCache = {
@@ -44,7 +45,8 @@
 		pageCache = {
 			'HOT': 0,
 			'PUTAWAY': 0,
-			'OPENING': 0
+			'OPENING': 0,
+			'INFOR':0
 		};
 		maxPageCache = {
 			'GIFT': 100,
@@ -169,9 +171,13 @@
 			/*	type:type,
 				page:pageCache[type]+1*/
 			},function(res){
-				alert(1)
-			},function(e){
-				alert(2)
+				renderNewsList($(".games-list-content"), res.lists, options.isAppend);
+/*				maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
+				pageCache[type] = parseInt(res.page);
+				var isLastPage = pageCache[type] >= maxPageCache[type];*/
+	//			firstLoad && plus.nativeUI.closeWaiting();
+				//options.checkReady(isLastPage);				
+			},function(){
 				options.checkReady();
 			});
 		}else{

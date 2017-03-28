@@ -51,10 +51,6 @@
 		}), done, failed);
 	}
 	
-/*	owner.getNews = function(done,failed){
-		return get("/Api/App/getNews",encode({}),done,failed)
-	}
-	*/
 	owner.playGame = function(data,done,failed){
 		return post("/App/loginGame",encode(data),done,failed);
 	}
