@@ -40,6 +40,10 @@
 	owner.getGames = function(data, done, failed) {
 		return post("/Api/App/getGames", encode(data), done, failed);
 	}
+	
+	owner.getNews = function(data, done, failed) {
+		return post("/Api/App/newsList", encode(data), done, failed);
+	}
 
 	owner.getGameDetail = function(gid, done, failed) {
 		return post("/Api/App/getGame", encode({
