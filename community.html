@@ -7,7 +7,20 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<style>
-			body {margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;overflow: hidden;}
+			body {width: 100%;height: 100%;margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;overflow: hidden;}
+/*			iframe {
+				width: 100%;
+				height: 100%;
+			}*/
+			.loading-wrap {
+				height: 40px;
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				margin-top: -20px;
+				left: 0;
+			}
 		</style>
 	</head>
 
@@ -16,15 +29,41 @@
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">天天玩社区</h1>
 		</header>
-<!--		<div class="mui-content">
-			<iframe id="iframepage" frameborder="0" width="100%" height="100%" ></iframe>
-		</div>-->-->
+		<div class="mui-content">
+	        <div id="loading-wrap" >  
+	            <!--<iframe id="iframepage" height="100%" width="100%" type="text/html" src="https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166" scrolling="no"></iframe>  -->
+			</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/zepto.js"></script>
 		<script type="text/javascript">
-			(function(mui, doc){
-				mui.init();
-				mui.plusReady(function() {
+			//(function(mui, doc){
+				var createIframe = function(url) {
+					var wrap = document.querySelector(".mui-content");
+					var iframe = document.createElement('iframe');
+					var iheight = document.body.scrollHeight;
+					var iwidth = document.body.scrollWidth;
+					var fheight = document.getElementsByTagName('header')[0].scrollHeight;
+					//console.log(fheight);
+					iheight = parseInt(iheight)-parseInt(fheight);
+					iframe.onload=function(){
+				        iframe.style.display='block';
+				        iframe.style.height=iheight+'px';
+				        iframe.style.scrolling = "no";
+				        alert(iframe.style.height+'_'+iheight);
+				        iframe.style.border=0;
+				        $(iframe).contents().find('body').width(iwidth) ;
+				        $(iframe).contents().find('body').css({'height':'400px !important','overflow-y':'auto !important'});
+				        alert(  $(iframe).contents().find('body')[0].offsetHeight+"_"+iframe.style.height+"_"+iheight )
+				       // console.log('iframe loaded')//
+				    };
+					iframe.src = url;
+					iframe.id = "community-iframe";
+					iframe.name = "community-iframe";
+					wrap.appendChild(iframe);				
+				}
+				createIframe('https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166');
+				//mui.init();
+/*					mui.plusReady(function() {
 					var self = plus.webview.currentWebview(),
 						url = 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166',
 						id = 'community_sub.html',
@@ -58,10 +97,10 @@
 							}
 						)
 				    }
-				})
-			})(mui, document)
-
-/*			mui.plusReady(function() {
+				})*/
+			//})(mui, document)
+/*			mui.init()
+			mui.plusReady(function() {
 				var myiframe = document.getElementById('iframepage');
 				var url = 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166';
 				myiframe.src = url;
