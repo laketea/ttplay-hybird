@@ -120,7 +120,7 @@
 		//获取游戏信息
 		apis.getGameDetail(game.gid || game.id, function(res) {
 			game = res.data;
-			var icon = "http://www.letsv.com/Uploads/Game/" + game.icon;
+			var icon = "http://www.91quyou.cn/Uploads/Game/" + game.icon;
 			doc.querySelector(".gameHeader").style.backgroundImage = 'url(' + icon + ')'
 			doc.querySelector(".gameHeaderPhoto img").src = icon;
 			doc.querySelector(".game-name").innerHTML = game.name || game.sname;
