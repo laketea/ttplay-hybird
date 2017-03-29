@@ -13,7 +13,8 @@
 	var pageCache = {
 		'HOT': 0,
 		'PUTAWAY': 0,
-		'OPENING': 0
+		'OPENING': 0,
+		'INFOR': 0
 	};
 
 	var maxPageCache = {
@@ -166,12 +167,16 @@
 		//资讯的页面
 		if( type == 'INFOR'){
 			apis.getNews({
-			/*	type:type,
+/*				type:type,
 				page:pageCache[type]+1*/
 			},function(res){
-				alert(1)
+				renderNewsList($(".games-list-content"), res.lists, options.isAppend);
+				maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
+				pageCache[type] = parseInt(res.page);
+				var isLastPage = pageCache[type] >= maxPageCache[type];
+	//			firstLoad && plus.nativeUI.closeWaiting();
+				options.checkReady(isLastPage);
 			},function(e){
-				alert(2)
 				options.checkReady();
 			});
 		}else{
@@ -225,6 +230,26 @@
 			firstLoad = true;
 			pulldownRefresh();
 		});
+		//资讯窗口
+		mui(".games-list-content").on('tap', '.news-li', function(){
+			url = this.getAttribute('data-url');
+			mui.openWindowWithTitle({
+			    url:url,
+			    id:url
+			},{
+			    title:{//标题配置
+			        text:"资讯详情",//标题文字
+			    },
+			    back:{//左上角返回箭头
+			        image:{
+			            base64Data:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAb1BMVEUAAAAAev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8AAACubimgAAAAI3RSTlMAGfUTGfQTGPMSGPIYGhgaGBsXGxcbFxwXHBccFhwWHRYdHWufDPQAAAABYktHRACIBR1IAAAAB3RJTUUH4QETEBwooeTlkQAAAJVJREFUSMft1EkSgkAQRNFGUXFWHBDBibr/HTUwD5B/48Ig1y+io7u6MqUhf5hsNEY+j5hMgZ/FJ8Xc9ovos3T96utjbfqN/Nb0O/m96Uv5g+mP8ifTn+Ur01/ka9Nf5RvTt/I309/lH6Z/yr9Mn+Q71/MT8B34K/E58Enzv8R/K98HvnF8p3lr8F7izce7lbf3kJ/lDQp9HdBhgg3PAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTAxLTE5VDE2OjI4OjQwKzA4OjAwpTDFwQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wMS0xOVQxNjoyODo0MCswODowMNRtfX0AAAAASUVORK5CYII='
+			        },
+			        click:function(){
+			           plus.webview.close(url);
+			        }
+			    }
+			})		
+		})
 		//显示二维码
 		$('#openPopover').on('tap', function(){
 			var mask = mui.createMask( hideQrcode );

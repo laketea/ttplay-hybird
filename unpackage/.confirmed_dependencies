@@ -159,7 +159,8 @@
 			"js/zepto.js",
 			"images/zhifubao.png",
 			"js/popver.js",
-			"images/selected-icon.png"
+			"images/selected-icon.png",
+			"css/base.css"
 		]
 	},
 	"game.html": {
@@ -178,7 +179,8 @@
 			"images/default-user.png",
 			"images/btnCollect.png",
 			"js/md5.js",
-			"images/photoBg.jpg"
+			"images/photoBg.jpg",
+			"images/qrcode.jpg"
 		],
 		"refer": [
 			"login_view.html"

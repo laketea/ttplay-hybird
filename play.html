@@ -163,7 +163,6 @@
 			var createIframe = function(url) {
 				var wrap = document.querySelector(".mui-content");
 				var iframe = document.createElement('iframe');
-				console.log(document.body.scrollHeight);
 				var iheight = document.body.scrollHeight;
 				var fheight = document.getElementsByTagName('header')[0].scrollHeight;
 				//console.log(fheight);
@@ -177,8 +176,10 @@
 			    };
 				iframe.src = url;
 				iframe.id = "game-iframe";
-				iframe.setAttribute('scrolling','no');
-				iframe.setAttribute('rameborder','0');
+/*				iframe.style.border = 0;
+				iframe.style.frameborder = 0;
+				iframe.style.width = screen.availWidth+'px';
+				iframe.style.height = (screen.availHeight - oH)+'px' || 'auto';*/
 				iframe.name = "game-iframe";
 				wrap.appendChild(iframe);				
 			}
