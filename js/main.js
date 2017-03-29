@@ -82,13 +82,9 @@
 	
 	//选项卡点击事件
 	mui('.mui-bar-tab').on('tap', 'a', function(e) {
-
 		var targetTab = this.getAttribute('href');
-		
 		plus.webview.close("game.html");
-
 		if(targetTab == 'community.html') {
-			//mui.alert("板块正在建设中...");
 			mui.openWindow({
 				url: 'community.html',
 				id: 'community',
@@ -129,16 +125,24 @@
 		activeTab = targetTab;
 	});
 	//自定义事件，模拟点击“首页选项卡”
-	document.addEventListener('gohome', function() {
+	mui('.mui-bar-tab').on('tap', '.mui-tab-item', function(){
+		if(this.getAttribute('href') === 'community.html') return;
+		var tabs = document.getElementsByClassName('mui-tab-item');
+		for(  var i=0, l=tabs.length; i<l; i++){
+			tabs[i].classList.remove('mui-actives')
+		}
+		this.classList.add('mui-actives');
+	})
+/*	document.addEventListener('gohome', function() {
 		var defaultTab = document.getElementById("defaultTab");
 		//模拟首页点击
 		mui.trigger(defaultTab, 'tap');
 		//切换选项卡高亮
-		var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+		var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-actives");
 		if(defaultTab !== current) {
-			current.classList.remove('mui-active');
-			defaultTab.classList.add('mui-active');
+			current.classList.remove('mui-actives');
+			defaultTab.classList.add('mui-actives');
 		}
-	});
+	});*/
 
 }(mui, document));

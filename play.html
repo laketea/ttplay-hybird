@@ -163,6 +163,7 @@
 			var createIframe = function(url) {
 				var wrap = document.querySelector(".mui-content");
 				var iframe = document.createElement('iframe');
+				var oH = document.getElementsByTagName('header')[0].innerHeight;
 				iframe.onload=function(){
 			        iframe.style.display='block';
 			        document.querySelector(".loading-wrap").style.display ="none";
@@ -170,8 +171,10 @@
 			    };
 				iframe.src = url;
 				iframe.id = "game-iframe";
-				iframe.setAttribute('scrolling','no');
-				iframe.setAttribute('rameborder','0');
+/*				iframe.style.border = 0;
+				iframe.style.frameborder = 0;
+				iframe.style.width = screen.availWidth+'px';
+				iframe.style.height = (screen.availHeight - oH)+'px' || 'auto';*/
 				iframe.name = "game-iframe";
 				wrap.appendChild(iframe);				
 			}
@@ -182,8 +185,7 @@
 				document.querySelector(".mui-title").innerHTML = game.name;
 				
 				var pop = new popover({ el:'#pay-popover', notCancelView: true});
-				
-				createIframe('http://test.letsv.com/Api/Test' || game.url);
+				createIframe(game.url);
 
 				window.addEventListener('message', function(e) {
 					// 判断是否从子窗口发送过来的数据

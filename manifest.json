@@ -365,7 +365,8 @@
 					"game_sub.html",
 					"images/btnCollect.png",
 					"login_view.html",
-					"images/default-user.png"
+					"images/default-user.png",
+					"images/qrcode.jpg"
 				],
 				"refer": [
 					"play.html"

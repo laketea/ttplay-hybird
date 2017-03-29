@@ -16,23 +16,52 @@
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">天天玩社区</h1>
 		</header>
-		<div class="mui-content">
+<!--		<div class="mui-content">
 			<iframe id="iframepage" frameborder="0" width="100%" height="100%" ></iframe>
-		</div>
+		</div>-->-->
 		<script src="js/mui.min.js"></script>
 		<script src="js/zepto.js"></script>
 		<script type="text/javascript">
-/*			mui.init({
-				subpages: [{
-					url: 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166',
-					id: 'community_sub.html',
-					styles: {
-						top: '45px',
-						bottom: 0,
-					}
-				}]
-			});*/
-			mui.plusReady(function() {
+			(function(mui, doc){
+				mui.init();
+				mui.plusReady(function() {
+					var self = plus.webview.currentWebview(),
+						url = 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166',
+						id = 'community_sub.html',
+						styles = {
+							top: '45px',
+							bottom: 0
+						};
+					var sub = plus.webview.create(url, id, styles);
+					self.append(sub);
+					sub.overrideUrlLoading({mode:"reject"}, function(e){
+				        showSubPage(e.url)
+				    });
+				    //再打开一个二级菜单窗口
+				    function showSubPage(e){
+						mui.openWindowWithTitle({
+							    url:e,
+							    id:e
+							},
+							{
+							    title:{//标题配置
+							        text:"社区",//标题文字
+							    },
+							    back:{//左上角返回箭头
+							        image:{
+							            base64Data:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAb1BMVEUAAAAAev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8AAACubimgAAAAI3RSTlMAGfUTGfQTGPMSGPIYGhgaGBsXGxcbFxwXHBccFhwWHRYdHWufDPQAAAABYktHRACIBR1IAAAAB3RJTUUH4QETEBwooeTlkQAAAJVJREFUSMft1EkSgkAQRNFGUXFWHBDBibr/HTUwD5B/48Ig1y+io7u6MqUhf5hsNEY+j5hMgZ/FJ8Xc9ovos3T96utjbfqN/Nb0O/m96Uv5g+mP8ifTn+Ur01/ka9Nf5RvTt/I309/lH6Z/yr9Mn+Q71/MT8B34K/E58Enzv8R/K98HvnF8p3lr8F7izce7lbf3kJ/lDQp9HdBhgg3PAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTAxLTE5VDE2OjI4OjQwKzA4OjAwpTDFwQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wMS0xOVQxNjoyODo0MCswODowMNRtfX0AAAAASUVORK5CYII='
+							        },
+							        click:function(){
+							           plus.webview.close(e);
+							        }
+							    }
+							}
+						)
+				    }
+				})
+			})(mui, document)
+
+/*			mui.plusReady(function() {
 				var myiframe = document.getElementById('iframepage');
 				var url = 'https://buluo.qq.com/mobile/barindex.html?_bid=128&_wv=1027&bid=365166';
 				myiframe.src = url;
@@ -48,7 +77,7 @@
 					$(myiframe).height(oH-headerH);
 				}
 
-			})
+			})*/
 		</script>
 	</body>
 

@@ -3,7 +3,7 @@
 		sign = "9CLm76**$L&a&Tsjb6Ivc#vdnDcoSH3C";
 
 	owner.login = function(data, done, failed) {
-		return post("/Api/App/isLogin", encode(data), done, function(error) {
+		return post("/App/isLogin", encode(data), done, function(error) {
 			if(error.status == 0) {
 				error.msg = "此帐号不存在";
 			} else if(error.status == 2) {

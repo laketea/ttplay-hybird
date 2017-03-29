@@ -1,4 +1,4 @@
-var iconHost = "http://www.letsv.com/Uploads/Game/";
+var iconHost = "http://www.91quyou.cn/Uploads/Game/";
 
 function renderGameItem(item, recently, isMyGames) {
 	var html = [],
@@ -7,7 +7,7 @@ function renderGameItem(item, recently, isMyGames) {
 	item.tags = item.tags || '';
 	html.push('<div class="media game-list-item">');
 	html.push('<div class="media-left media-middle" data-gameid="' + item.id + '" style="position:relative;">');
-	html.push('<img style="border-radius:15px;" class="media-object game-icon" src="http://www.letsv.com/Uploads/Game/' + item.icon + '" />')
+	html.push('<img style="border-radius:15px;border:none;" class="media-object game-icon" src="http://www.91quyou.cn/Uploads/Game/' + item.icon + '" />')
 	html.push('</div>');
 	html.push('<div class="media-body" data-gameid="' + item.icon + '">');
 	if(recently) {
@@ -45,12 +45,12 @@ function renderGameItem(item, recently, isMyGames) {
 			html.push('<a class="game-enter-button" ready="true"  href="javascript:void(0);" role="button" external="true">进 入</a>')
 		}
 		if(recently) {
-			html.push('<div class="opened-time" style="width:1.8rem; padding-top:1rem;font-size:.3rem;text-align:right;">已开服' + getDateDiff(startTime, now) + '</div>'); //已开服
+			html.push('<div class="opened-time" style="padding-top:1rem;font-size:.3rem;white-space:nowrap;color:#a1a1a1;">已开服' + getDateDiff(startTime, now) + '</div>'); //已开服
 		}
 	} else {
 		var datetime = getDateTime(startTime);
 		//显示开服时间
-		html.push('<div><p>' + datetime.date + '</p><p>' + datetime.time + '</p></div>');
+		html.push('<div class="regular-time"><p>' + datetime.date + '</p><p>' + datetime.time + '</p></div>');
 	}
 
 	html.push('</div></div>');
@@ -71,12 +71,19 @@ function renderGameItem(item, recently, isMyGames) {
 	return $item;
 }
 function renderNewsItem(item) { 
-	var html = '<li class="news-li" data-url='+item.url+'>'+
-						'<span class="game-loads">'+item.type+'</span>'+
-        				'<span class="game-title">'+item.title+'</span>'+
-        				'<span class="game-loads">'+getDateTime(item.intime*1000).date+'</span>'+
-    				'</li>'
-	return $( html);
+	var type = null;
+		if( item.type == '公告' ){
+			type = 'news-r';
+		}else if( item.type == '活动' ){
+			type = 'news-a';
+		}
+	var html = '<li class="mui-table-view-cell news-li" data-url="'+item.url+'">'+
+				'<span class="'+type+'">'+item.type+'</span>'+
+					'<span>'+item.title+'</span>'+
+					'<span>'+getDateTime(item.intime*1000).date+'</span>'+
+				'</li>'
+	
+	return $(html);
 }
 
 //渲染游戏列表
@@ -347,6 +354,7 @@ function playGame(item) {
 		gid: item.gid || item.id,
 		mid: window.app.getState().id
 	}, function(res) {
+		console.log(JSON.stringify(res));
 		plus.nativeUI.closeWaiting();
 		mui.openWindow({
 			url: 'play.html',
