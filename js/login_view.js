@@ -97,6 +97,10 @@
 				s.getUserInfo(function(e) {
 					switch(s.id) {
 						case 'weixin':
+						console.log(JSON.stringify(s));
+						//var _turl = 'https://api.weixin.qq.com/sns/userinfo?access_token='+s.authResult.access_token+'&openid='+s.authResult.openid+'&lang=zh_CN';
+						//console.log("URL:"+_turl);
+						//mui.ajax(_turl,{dataType:'json',type:'get',success:function(res){console.log(JSON.stringify(res));},error:function(err){console.log(JSON.stringify(err));}});
 							packData(
 								s.userInfo.openid,
 								'WEIXIN',
@@ -106,7 +110,8 @@
 								s.userInfo.headimgurl,
 								s.userInfo.country,
 								s.userInfo.province,
-								s.userInfo.city
+								s.userInfo.city,
+								s.userInfo.unionid
 							);
 						break;
 						case 'qq':
@@ -125,7 +130,8 @@
 								s.userInfo.figureurl_qq_2,
 								'',
 								s.userInfo.province,
-								s.userInfo.city
+								s.userInfo.city,
+								''
 							);
 						break;
 						case 'sinaweibo':
@@ -137,6 +143,7 @@
 								s.userInfo.sex,
 								s.userInfo.avatar_large,
 								s.userInfo.location,
+								'',
 								'',
 								''
 							);
@@ -150,7 +157,7 @@
 		}
 		
 		//封装API需要的数据，调用
-		function packData(openid,type,cid, nickname,sex,avatar,country,province,city) {
+		function packData(openid,type,cid, nickname,sex,avatar,country,province,city,unionid=null) {
 			var authLoginInfo = {
 				openid:openid,
 				type:type,
@@ -160,7 +167,8 @@
 				avatar:avatar,
 				country:country,
 				province:province,
-				city:city
+				city:city,
+				unionid:unionid,
 			};
 			apis.authLogin(authLoginInfo,function(res) {
 					res.nickname = res.username;
@@ -168,7 +176,7 @@
 					plus.nativeUI.closeWaiting();
 					mui.fire(plus.webview.getLaunchWebview(),"login");
 					mui.toast("登陆成功！");
-					authLogout();
+					//authLogout();
 			}, function(error) {
 					mui.toast("登陆失败！");
 					plus.nativeUI.closeWaiting();

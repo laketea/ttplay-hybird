@@ -100,7 +100,6 @@
 				}
 			}, 'div');
 		});
-		
 		pulldownRefresh();
 
 	});
