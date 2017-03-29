@@ -163,8 +163,15 @@
 			var createIframe = function(url) {
 				var wrap = document.querySelector(".mui-content");
 				var iframe = document.createElement('iframe');
+				console.log(document.body.scrollHeight);
+				var iheight = document.body.scrollHeight;
+				var fheight = document.getElementsByTagName('header')[0].scrollHeight;
+				//console.log(fheight);
+				iheight = parseInt(iheight)-parseInt(fheight);
 				iframe.onload=function(){
 			        iframe.style.display='block';
+			        iframe.style.height=iheight+'px';
+			        iframe.style.border=0;
 			        document.querySelector(".loading-wrap").style.display ="none";
 			        console.log('iframe loaded')
 			    };
@@ -176,6 +183,7 @@
 				wrap.appendChild(iframe);				
 			}
 			mui.plusReady(function() {
+				console.log(window.clientHeight);
 				var self = plus.webview.currentWebview();
 				var game = self.game;
 				var order = null;
@@ -187,7 +195,8 @@
 				window.addEventListener('message', function(e) {
 					// 判断是否从子窗口发送过来的数据
 					if(e.source && e.source.parent == window){
-					    order = JSON.parse(e.data);
+						if(typeof(e.data) == 'string') {
+							order = JSON.parse(e.data);
 					    //TODO 更新弹出层中的文案及数据
 					    if(order.price<= 0 ) {
 					    		mui.alert("充值金额有误！");
@@ -197,6 +206,7 @@
 					    //console.log(_price);
 					    $("#real-money").text("￥"+_price);
 						pop.open();
+						}
 					}
 				}, false);
 				
@@ -225,7 +235,7 @@
 				$('#to-pay').on('tap', function(){
 					var state = $('.selecteds-active').attr('data-val');
 					//console.log(order);
-					var url = 'http://test.letsv.com/Api/App/';
+					var url = 'http://api.91quyou.cn/App/';
 					var params = '/?mid='+order.mid+'&gid='+order.gid+'&sid='+order.sid+'&cid='+order.cid+'&oid='+order.oid+'&money='+order.price+'&subject='+order.subject+'&ext='+order.ext;
 					var _id = null;
 					switch(state) {
