@@ -564,7 +564,11 @@
 		}
 	},
 	"unpackage": [
-		"css/mui.css",
-		"js/mui.js"
+	  "css/mui.css",
+	  "js/mui.js",
+	  "images/6.png",
+	  "images/7.png",
+	  "images/8.png",
+	  "images/9-1.png"
 	]
 }
