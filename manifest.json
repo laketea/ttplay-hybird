@@ -7,7 +7,7 @@
 	"id": "H5349DAF9",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "就爱天天玩",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.0.1",/*应用版本名称*/
+		"name": "1.0.1",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -209,7 +209,7 @@
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
 					"hdpi": "images/start/android480.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "images/start/android720 .png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xhdpi": "images/start/android720.png", /*720P高分屏启动图片，分辨率：720x1242*/
 					"xxhdpi": "images/start/android1080.png"
 				}
 			}
