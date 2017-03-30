@@ -1,197 +1,198 @@
 {
-	"index_sub.html": {
-		"resources": [
-			"images/5.png",
-			"css/index.css",
-			"images/2.png",
-			"css/base.css",
-			"images/3.png",
-			"images/4.png",
-			"css/mui.min.css",
-			"js/index.js",
-			"images/btnCollect.png",
-			"images/default-user.png",
-			"images/photoBg.jpg",
-			"js/mui.min.js",
-			"js/app.js",
-			"js/zepto.js",
-			"js/common.js",
-			"js/apis.js",
-			"js/popver.js",
-			"js/md5.js",
-			"fonts/mui.ttf",
-			"images/qrcode.jpg"
-		],
-		"refer": [
-			"play.html",
-			"game.html"
-		]
-	},
-	"index.html": {
-		"resources": [
-			"index_sub.html",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"index_sub.html"
-		]
-	},
-	"main.html": {
-		"resources": [
-			"images/user.png",
-			"js/main.js",
-			"index.html",
-			"js/app.js",
-			"css/base.css",
-			"images/home-active.png",
-			"images/user-active.png",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"images/home.png",
-			"images/gift.png",
-			"js/popver.js",
-			"images/contact.png",
-			"images/gift-active.png",
-			"images/contact-active.png"
-		],
-		"refer": [
-			"index.html",
-			"gift.html",
-			"community.html",
-			"user.html",
-			"login_view.html"
-		]
-	},
-	"gift.html": {
-		"resources": [
-			"gift_sub.html",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"gift_sub.html"
-		]
-	},
-	"user.html": {
-		"resources": [
-			"user_sub.html"
-		],
-		"refer": [
-			"user_sub.html"
-		]
-	},
-	"gift_sub.html": {
-		"resources": [
-			"images/g1.png",
-			"images/g2.png",
-			"images/g3.png",
-			"js/gift.js",
-			"css/index.css",
-			"css/base.css",
-			"css/mui.min.css",
-			"images/default-user.png",
-			"images/btnCollect.png",
-			"js/mui.min.js",
-			"images/photoBg.jpg",
-			"fonts/mui.ttf",
-			"js/app.js",
-			"js/zepto.js",
-			"js/common.js",
-			"js/apis.js",
-			"images/qrcode.jpg",
-			"js/md5.js"
-		],
-		"refer": [
-			"game.html"
-		]
-	},
-	"user_sub.html": {
-		"resources": [
-			"images/photoBg.jpg",
-			"js/user.js",
-			"images/default-user.png",
-			"css/index.css",
-			"css/base.css",
-			"css/mui.min.css",
-			"js/app.js",
-			"js/zepto.js",
-			"js/common.js",
-			"js/apis.js",
-			"js/mui.min.js",
-			"js/popver.js",
-			"js/md5.js",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"game.html",
-			"play.html"
-		]
-	},
-	"login_view.html": {
-		"resources": [
-			"css/index.css",
-			"js/login_view.js",
-			"css/base.css",
-			"js/common.js",
-			"js/apis.js",
-			"images/icon-qq.png",
-			"images/icon-sina.png",
-			"images/icon-weixin.png",
-			"js/zepto.js",
-			"js/reg.js",
-			"js/md5.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/popver.js",
-			"js/app.js",
-			"js/mui.min.js"
-		]
-	},
-	"play.html": {
-		"resources": [
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"images/weixin.png",
-			"js/zepto.js",
-			"images/zhifubao.png",
-			"js/popver.js",
-			"images/selected-icon.png",
-			"css/base.css"
-		]
-	},
-	"game.html": {
-		"resources": [
-			"fonts/mui.ttf",
-			"js/game.js",
-			"css/mui.min.css",
-			"login_view.html",
-			"css/base.css",
-			"js/app.js",
-			"js/zepto.js",
-			"css/index.css",
-			"js/common.js",
-			"js/apis.js",
-			"js/mui.min.js",
-			"images/default-user.png",
-			"images/btnCollect.png",
-			"js/md5.js",
-			"images/photoBg.jpg",
-			"images/qrcode.jpg"
-		],
-		"refer": [
-			"login_view.html"
-		]
-	},
-	"community.html": {
-		"resources": [
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/zepto.js"
-		]
-	}
+  "index_sub.html": {
+    "resources": [
+      "images/5.png",
+      "css/index.css",
+      "images/2.png",
+      "css/base.css",
+      "images/3.png",
+      "images/4.png",
+      "css/mui.min.css",
+      "js/index.js",
+      "images/btnCollect.png",
+      "images/default-user.png",
+      "images/photoBg.jpg",
+      "js/mui.min.js",
+      "js/app.js",
+      "js/zepto.js",
+      "js/common.js",
+      "js/apis.js",
+      "js/popver.js",
+      "js/md5.js",
+      "fonts/mui.ttf",
+      "images/qrcode.jpg"
+    ],
+    "refer": [
+      "play.html",
+      "game.html"
+    ]
+  },
+  "index.html": {
+    "resources": [
+      "index_sub.html",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "index_sub.html"
+    ]
+  },
+  "main.html": {
+    "resources": [
+      "images/user.png",
+      "js/main.js",
+      "index.html",
+      "js/app.js",
+      "css/base.css",
+      "images/home-active.png",
+      "images/user-active.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/home.png",
+      "images/gift.png",
+      "js/popver.js",
+      "images/contact.png",
+      "images/gift-active.png",
+      "images/contact-active.png"
+    ],
+    "refer": [
+      "index.html",
+      "gift.html",
+      "community.html",
+      "user.html",
+      "login_view.html"
+    ]
+  },
+  "gift.html": {
+    "resources": [
+      "gift_sub.html",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "gift_sub.html"
+    ]
+  },
+  "user.html": {
+    "resources": [
+      "user_sub.html",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "user_sub.html"
+    ]
+  },
+  "gift_sub.html": {
+    "resources": [
+      "images/g1.png",
+      "images/g2.png",
+      "images/g3.png",
+      "js/gift.js",
+      "css/index.css",
+      "css/base.css",
+      "css/mui.min.css",
+      "images/default-user.png",
+      "images/btnCollect.png",
+      "js/mui.min.js",
+      "images/photoBg.jpg",
+      "fonts/mui.ttf",
+      "js/app.js",
+      "js/zepto.js",
+      "js/common.js",
+      "js/apis.js",
+      "images/qrcode.jpg",
+      "js/md5.js"
+    ],
+    "refer": [
+      "game.html"
+    ]
+  },
+  "user_sub.html": {
+    "resources": [
+      "images/photoBg.jpg",
+      "js/user.js",
+      "images/default-user.png",
+      "css/index.css",
+      "css/base.css",
+      "css/mui.min.css",
+      "js/app.js",
+      "js/zepto.js",
+      "js/common.js",
+      "js/apis.js",
+      "js/mui.min.js",
+      "js/popver.js",
+      "js/md5.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "game.html",
+      "play.html"
+    ]
+  },
+  "login_view.html": {
+    "resources": [
+      "css/index.css",
+      "js/login_view.js",
+      "css/base.css",
+      "js/common.js",
+      "js/apis.js",
+      "images/icon-qq.png",
+      "images/icon-sina.png",
+      "images/icon-weixin.png",
+      "js/zepto.js",
+      "js/reg.js",
+      "js/md5.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/popver.js",
+      "js/app.js",
+      "js/mui.min.js"
+    ]
+  },
+  "play.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/weixin.png",
+      "js/zepto.js",
+      "images/zhifubao.png",
+      "js/popver.js",
+      "images/selected-icon.png",
+      "css/base.css"
+    ]
+  },
+  "game.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/game.js",
+      "css/mui.min.css",
+      "login_view.html",
+      "css/base.css",
+      "js/app.js",
+      "js/zepto.js",
+      "css/index.css",
+      "js/common.js",
+      "js/apis.js",
+      "js/mui.min.js",
+      "images/default-user.png",
+      "images/btnCollect.png",
+      "js/md5.js",
+      "images/photoBg.jpg",
+      "images/qrcode.jpg"
+    ],
+    "refer": [
+      "login_view.html"
+    ]
+  },
+  "community.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/zepto.js"
+    ]
+  }
 }
