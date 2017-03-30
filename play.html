@@ -123,9 +123,9 @@
 			button:enabled:active {
 				background: #00c901;
 			}
-			.mui-bar-nav {
-				box-shadow: none;
-				-webkit-box-shadow: none;	
+			.mui-var-nav {
+				-webkit-box-shadow: none !important;
+				box-shadow: none !important;
 			}
 		</style>
 	</head>
@@ -180,10 +180,6 @@
 			    };
 				iframe.src = url;
 				iframe.id = "game-iframe";
-/*				iframe.style.border = 0;
-				iframe.style.frameborder = 0;
-				iframe.style.width = screen.availWidth+'px';
-				iframe.style.height = (screen.availHeight - oH)+'px' || 'auto';*/
 				iframe.name = "game-iframe";
 				wrap.appendChild(iframe);				
 			}
