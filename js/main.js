@@ -161,5 +161,4 @@
 			defaultTab.classList.add('mui-actives');
 		}
 	});
-
 }(mui, document));

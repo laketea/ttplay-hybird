@@ -6,7 +6,7 @@
 	var endLoading = 0;
 	var maxPage = 100;
 	var page = 0;
-
+	var sendTitleName = null;
 	var enterBtn = doc.querySelector('.detail-enter');
 	var joinBtn = doc.querySelector('.detail-join');
 
@@ -67,7 +67,7 @@
 		self.append(loginView);
 		
 		doc.querySelector('.detail-enter').addEventListener('tap', function() {
-			playGame(game);
+			playGame({gid: game.gid || game.id, name: sendTitleName});
 		});
 		reload(game);
 			//显示二维码
@@ -120,6 +120,7 @@
 		//获取游戏信息
 		apis.getGameDetail(game.gid || game.id, function(res) {
 			game = res.data;
+			sendTitleName = game.name || game.sname;
 			var icon = "http://www.91quyou.cn/Uploads/Game/" + game.icon;
 			doc.querySelector(".gameHeader").style.backgroundImage = 'url(' + icon + ')'
 			doc.querySelector(".gameHeaderPhoto img").src = icon;
