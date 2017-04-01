@@ -31,9 +31,9 @@
 			},
 			up: {
 				height: 50, //可选.默认50.触发上拉加载拖动距离
-				auto: false, //可选,默认false.自动上拉加载一次
+				auto: true, //可选,默认false.自动上拉加载一次
 				contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-				contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+				contentnomore: '没有更多数据了...', //可选，请求完毕若没有更多数据时显示的提醒内容；
 				callback: pullupRefresh
 			}
 		}
@@ -45,7 +45,8 @@
 		pageCache = {
 			'HOT': 0,
 			'PUTAWAY': 0,
-			'OPENING': 0
+			'OPENING': 0,
+			'INFOR':0
 		};
 		maxPageCache = {
 			'GIFT': 100,
@@ -167,8 +168,7 @@
 		//资讯的页面
 		if( type == 'INFOR'){
 			apis.getNews({
-/*				type:type,
-				page:pageCache[type]+1*/
+				page:pageCache[type]+1
 			},function(res){
 				renderNewsList($(".games-list-content"), res.lists, options.isAppend);
 				maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
@@ -184,11 +184,15 @@
 				type: type,
 				page: pageCache[type]+1
 			}, function(res) {
+
 				renderGameList($(".games-list-content"), res.lists, options.isAppend, recently);
 				maxPageCache[type] = Math.ceil(parseInt(res.total || 0) / res.pagesize);
 				pageCache[type] = parseInt(res.page);
 				var isLastPage = pageCache[type] >= maxPageCache[type];
 	//			firstLoad && plus.nativeUI.closeWaiting();
+				if(res.lists.length == 0){
+					isLastPage = true;
+				}
 				options.checkReady(isLastPage);
 			}, function() {
 	//			firstLoad && plus.nativeUI.closeWaiting();
