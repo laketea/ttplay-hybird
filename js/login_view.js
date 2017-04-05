@@ -9,8 +9,6 @@
 	//创建子页面，首个选项卡页面显示，其它均隐藏；
 	mui.plusReady(function() {
 		
-		
-
 		var settings = app.getSettings();
 		var state = app.getState();
 		
@@ -155,9 +153,8 @@
 				});
 			}
 		}
-		
 		//封装API需要的数据，调用
-		function packData(openid,type,cid, nickname,sex,avatar,country,province,city,unionid=null) {
+		function packData(openid,type,cid, nickname,sex,avatar,country,province,city,unionid) {
 			var authLoginInfo = {
 				openid:openid,
 				type:type,
@@ -168,7 +165,7 @@
 				country:country,
 				province:province,
 				city:city,
-				unionid:unionid,
+				unionid:unionid || null,
 			};
 			apis.authLogin(authLoginInfo,function(res) {
 					res.nickname = res.username;
